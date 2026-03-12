@@ -1,0 +1,57 @@
+{
+  "violencia intrafamiliar": {
+    "definicion": "Agresiones físicas, psicológicas o económicas dentro del núcleo familiar.",
+    "estructura_informe": [
+      "Fecha y hora del incidente",
+      "Lugar del hecho",
+      "Descripción de las personas involucradas",
+      "Tipo de agresión",
+      "Medidas tomadas"
+    ],
+    "ejemplo": "El 10 de febrero de 2026, en Bogotá, se reportó un caso de violencia intrafamiliar donde un ciudadano agredió físicamente a su pareja. Se procedió a trasladar a la víctima a un centro médico y se inició el proceso legal correspondiente."
+  },
+  "hurto": {
+    "definicion": "Delito contra la propiedad que consiste en tomar bienes ajenos sin consentimiento.",
+    "estructura_informe": [
+      "Objeto hurtado",
+      "Valor estimado",
+      "Circunstancias del hurto",
+      "Testigos",
+      "Acciones policiales"
+    ],
+    "ejemplo": "El 11 de febrero de 2026, en el barrio Chapinero, un ciudadano denunció el hurto de su motocicleta. Se inició la búsqueda y se levantó el reporte oficial."
+  },
+  "riñas": {
+    "definicion": "Conflictos físicos entre dos o más personas en espacios públicos o privados.",
+    "estructura_informe": [
+      "Número de personas involucradas",
+      "Motivo de la riña",
+      "Lugar",
+      "Consecuencias",
+      "Intervención policial"
+    ],
+    "ejemplo": "El día 02 de febrero de 2025, siendo aproximadamente las 16:20 horas, cuando nos encontrábamos realizando actividades de patrullaje preventivo y disuasivo como integrantes de la patrulla de vigilancia número 12, en compañía de mi compañero de servicio patrullero de Policía ANDRÉS MERCHAN OROZCO, por el sector del barrio La Esperanza del municipio de Ciénaga – Magdalena, observamos a dos ciudadanos que discutían de manera alterada en plena vía pública, identificados posteriormente como JUAN CARLOS MARTÍNEZ PEREA y JOSÉ MANUEL RIVERA CASTRO.\nDe manera inmediata, y en presencia nuestra, el ciudadano JUAN CARLOS MARTÍNEZ PEREA tomó una botella de vidrio que se encontraba en el suelo, la partió contra un muro y con el fragmento agredió a JOSÉ MANUEL RIVERA CASTRO, causándole una herida visible a la altura del brazo izquierdo. Ante la inmediatez de los hechos y al configurarse la flagrancia conforme al artículo 301 del Código de Procedimiento Penal – Ley 906 de 2004, procedimos a intervenir para salvaguardar la integridad del ciudadano lesionado y garantizar la seguridad en el sector.\nSe le impartió al agresor la voz preventiva de ¡Alto, Policía Nacional!, pero este omitió la orden y trató de evadir nuestra presencia, por lo que fue reducido mediante el uso legítimo, racional y proporcional de la fuerza, de acuerdo con el Manual de Intervención Policial. Posteriormente, se le practicó registro a persona en aplicación del artículo 159 de la Ley 1801 de 2016 – Código Nacional de Seguridad y Convivencia Ciudadana, hallándole en su poder un fragmento de botella con rastros de sangre, el cual fue debidamente embalado, rotulado y dejado a disposición de la Fiscalía General de la Nación como elemento material probatorio.\nEn ese mismo instante, se le manifestó al ciudadano que quedaba capturado por el delito de Lesiones Personales, contemplado en el artículo 111 del Código Penal Colombiano Ley 599 de 2000. Acto seguido, se le leyeron y garantizaron sus derechos como persona capturada, conforme al artículo 303 de la Ley 906 de 2004, entre ellos el derecho a guardar silencio, a designar un abogado o a solicitar defensor público, a informar a un familiar sobre su situación y a ser puesto a disposición de la autoridad judicial competente en los términos de ley.\nIgualmente, se empleó la voz de registro institucional manifestándole: Policía Nacional, se le va a practicar un registro a persona conforme al artículo 159 de la Ley 1801 de 2016, con el fin de garantizar la seguridad de los presentes. Una vez asegurado el capturado, el ciudadano lesionado fue trasladado al Hospital San Cristóbal de Ciénaga, donde fue recibido por el personal médico para la valoración y atención inmediata de las heridas.\nSiendo las 16:25 horas, se logró contactar al familiar del capturado, el señor CARLOS MARTÍNEZ RIVERA, a quien se le informó la captura, el motivo de esta y el lugar de reclusión del aprehendido, garantizando así su derecho a la comunicación. Asimismo, se comunicó la novedad al Fiscal en turno de la URI de Ciénaga, al Defensor Público de turno y a la Personería Municipal, con el fin de garantizar la vigilancia en el respeto de los derechos humanos durante todo el procedimiento.\nSe deja constancia que durante la actuación policial el ciudadano capturado recibió en todo momento un trato digno, sin ser objeto de maltrato físico, verbal o psicológico, cumpliéndose estrictamente lo establecido en la Constitución, la Ley y los manuales de atención al ciudadano de la Policía Nacional.\nFinalmente, el ciudadano JUAN CARLOS MARTÍNEZ PEREA fue dejado a disposición de la Fiscalía General de la Nación – URI de Ciénaga, junto con el elemento material probatorio, para la correspondiente judicialización por el delito de Lesiones Personales, conforme al artículo 111 del Código Penal Colombiano.\nNuestra actuación se desarrolló bajo los principios de legalidad, necesidad, proporcionalidad y racionalidad, garantizando los derechos fundamentales de los involucrados y cumpliendo con el deber constitucional de proteger la vida, honra y bienes de la ciudadanía."
+  },
+  "homicidio": {
+    "definicion": "Privación de la vida de una persona de manera intencional o culposa.",
+    "estructura_informe": [
+      "Víctima identificada",
+      "Circunstancias del hecho",
+      "Posibles sospechosos",
+      "Evidencias recolectadas",
+      "Acciones judiciales"
+    ],
+    "ejemplo": "El 8 de febrero de 2026, en Suba, se reportó el homicidio de un ciudadano. La policía acordonó el área y se inició la investigación."
+  },
+  "delitos electorales": {
+    "definicion": "Acciones ilícitas que afectan la transparencia y legalidad de procesos electorales.",
+    "estructura_informe": [
+      "Tipo de irregularidad",
+      "Lugar del hecho",
+      "Personas involucradas",
+      "Impacto en el proceso",
+      "Medidas adoptadas"
+    ],
+    "ejemplo": "El 7 de febrero de 2026, en un puesto de votación en Kennedy, se reportó compra de votos. Se procedió a detener a los responsables y se notificó a la autoridad electoral."
+  }
+}

@@ -1,0 +1,755 @@
+{
+  "informacion_educativa": {
+    "que_es_llm": "Los Grandes Modelos de Lenguaje (LLM, Large Language Models) son sistemas de Inteligencia Artificial Generativa (IAGen) que crean contenido nuevo o modifican el existente (texto, imágenes, música, vídeos) basándose en patrones identificados en los datos de entrenamiento. Los LLM utilizan redes neuronales profundas entrenadas con enormes cantidades de texto para predecir la siguiente palabra más probable en una secuencia, lo que les permite generar respuestas coherentes y contextualizadas.",
+    "que_es_prompt": "Un prompt (o instrucción) es una instrucción o estímulo dado a un sistema de IA para generar una respuesta coherente. Es el punto de partida que condiciona la salida del modelo. El prompt actúa como el 'input' o entrada que le dice a la IA qué quieres que haga. La calidad del prompt determina directamente la calidad de la respuesta.",
+    "que_es_prompting": "El prompting (ingeniería de prompts) es el uso eficiente del lenguaje natural para explicar lo que buscamos y obtener una respuesta pertinente. Es una habilidad que se desarrolla con práctica, que implica saber comunicar claramente tus intenciones a la IA para obtener los resultados deseados.",
+    "importante_limitacion": "Los LLM pueden producir respuestas erróneas, falsas o sesgadas, ya que generan asociaciones probabilísticas de palabras basadas en patrones aprendidos. El modelo no 'sabe' ni 'entiende', simplemente predice. Por esto es crucial verificar siempre la información generada y no confiar ciegamente en las respuestas de la IA.",
+    "por_que_importa": "Un prompt bien redactado puede marcar la diferencia entre una respuesta mediocre y una respuesta excelente. La IA no puede adivinar lo que quieres si no se lo explicas claramente. Dominar el arte de crear buenos prompts es una habilidad esencial en la era de la IA."
+  },
+  "componentes_esenciales": {
+    "instruccion": {
+      "definicion": "La instrucción es el núcleo del prompt. Es una declaración imperativa que indica al modelo qué acción específica quieres que realice. Sin una instrucción clara, la IA no sabe qué hacer.",
+      "caracteristicas": "Debe ser clara, directa, específica y action-oriented (orientada a la acción). Debe responder a la pregunta: ¿Qué quieres que haga la IA?",
+      "ejemplos": ["Genera", "Redacta", "Analiza", "Crea", "Resume", "Explica", "Traduce", "Compara", "Evalúa", "Desarrolla", "Construye", "Programa", "Investiga", "Sintetiza"],
+      "palabras_clave": ["genera", "redacta", "escribe", "crea", "analiza", "resume", "explica", "describe", "haz", "elabora", "desarrolla", "construye", "traduce", "compara", "evalúa", "sintetiza"],
+      "consejos": [
+        "Usa verbos de acción claros y específicos",
+        "Sé preciso sobre el tipo de contenido que necesitas",
+        "Evita ambigüedades en la instrucción"
+      ]
+    },
+    "contexto": {
+      "definicion": "El contexto proporciona el marco de referencia necesario para que la IA entienda la situación, el entorno o las circunstancias específicas en las que debe trabajar. Sin contexto, la IA carece de información fundamental.",
+      "caracteristicas": "Proporciona el marco de referencia necesario para entender la situación. Cuanto más detallado sea el contexto, más precisa será la respuesta.",
+      "elementos": ["Lugar", "Tiempo", "Situación", "Personas involucradas", "Circunstancias", "Antecedentes", "Restricciones", "Objetivo específico"],
+      "indicadores": ["en", "durante", "cuando", "donde", "lugar", "ciudad", "barrio", "fecha", "hora", "contexto", "situación", "antecedentes", "para", "con el objetivo de"],
+      "ejemplos_contexto": [
+        "para una empresa de tecnología en Bogotá",
+        "durante una reunión de emergencia",
+        "considerando las leyes colombianas",
+        "para estudiantes de primer año de universidad",
+        "en el contexto de una entrevista de trabajo"
+      ],
+      "consejos": [
+        "Añade detalles relevantes sobre el entorno",
+        "Especifica limitaciones o restricciones",
+        "Proporciona antecedentes si son relevantes"
+      ]
+    }
+  },
+  "componentes_adicionales": {
+    "rol": {
+      "definicion": "El rol define el personaje, profesión o perspectiva específica desde la cual la IA debe responder. Establecer un rol ayuda a la IA a adoptar el tono, conocimiento y enfoque correcto.",
+      "importancia": "Cuando defines un rol, la IA utiliza ese conocimiento específico para responder de manera más relevante y con el vocabulario apropiado.",
+      "ejemplos": [
+        {"rol": "Abogado penalista", "contexto": "especializado en derecho penal colombiano"},
+        {"rol": "Médico general", "contexto": "con experiencia en medicina familiar"},
+        {"rol": "Profesor de historia", "contexto": "de educación secundaria"},
+        {"rol": "Periodista especializado", "contexto": "en noticias de tecnología"},
+        {"rol": "Programador senior", "contexto": "especializado en JavaScript"},
+        {"rol": "Político", "contexto": "en contexto de campaña electoral"},
+        {"rol": "Analista financiero", "contexto": "con experiencia en mercados emergentes"},
+        {"rol": "Chef profesional", "contexto": "especializado en cocina colombiana"},
+        {"rol": "Psicólogo clínico", "contexto": "enfocado en terapia cognitivo-conductual"},
+        {"rol": "Ingeniero civil", "contexto": "especializado en estructuras"}
+      ],
+      "palabras_para_definir_rol": ["actúa como", "eres", "como si fueras", "ponte en el papel de", "simula ser", "desde la perspectiva de", "扮演", "tu rol es"],
+      "consejos": [
+        "Define el rol al inicio del prompt",
+        "Especifica la experiencia o especialización",
+        "Combina el rol con el área de conocimiento"
+      ]
+    },
+    "formato_respuesta": {
+      "definicion": "El formato especifica cómo debe estructurarse la salida deseada. Un formato claro facilita la lectura y uso de la información generada.",
+      "importancia": "Sin formato especificado, la IA decide por sí misma cómo organizar la información, lo que puede no coincidir con tus necesidades.",
+      "opciones": [
+        {"formato": "Tabla", "descripcion": "Datos organizados en filas y columnas", "uso": "Comparaciones, listados estructurados"},
+        {"formato": "Lista", "descripcion": "Enumeración de elementos", "uso": "Pasos, elementos, recomendaciones"},
+        {"formato": "Párrafo", "descripcion": "Texto continuo", "uso": "Explicaciones, narrativas"},
+        {"formato": "JSON", "descripcion": "Estructura de datos", "uso": "Para程序ación, datos estructurados"},
+        {"formato": "Código", "descripcion": "Código fuente", "uso": "Programación, scripts"},
+        {"formato": "Poema", "descripcion": "Versos rimados o no", "Uso": "Creatividad, expresión artística"},
+        {"formato": "Carta", "descripcion": "Formato epistolar", "Uso": "Comunicación formal/informal"},
+        {"formato": "Informe", "descripcion": "Documento estructurado", "uso": "Análisis, presentaciones"},
+        {"formato": "Esquema", "descripcion": "Estructura general", "uso": "Planificación, overview"},
+        {"formato": "Mapa mental", "descripcion": "Diagrama de ideas", "uso": "Lluvia de ideas, relaciones"}
+      ],
+      "extencion": {
+        "minimo": "Especifica un mínimo de palabras o elementos",
+        "maximo": "Establece un límite máximo para evitar excesos",
+        "ejemplos": ["100 palabras", "500 caracteres", "5 puntos clave", "al menos 3 ejemplos"]
+      },
+      "palabras_formato": ["en forma de", "formato", "estructura", "como", "tabla", "lista", "json", "párrafo", "organizado en", "estructurado como"],
+      "consejos": [
+        "Especifica el formato al final del prompt",
+        "Si necesitas un formato específico, incluye un ejemplo",
+        "Combina formato con extensión para mayor precisión"
+      ]
+    },
+    "tono_deseado": {
+      "definicion": "El tono define el estilo de comunicación a utilizar. El mismo contenido puede presentarse de formas muy diferentes según el tono.",
+      "importancia": "El tono debe adecuarse a la audiencia y al propósito. Un tono inadecuado puede hacer que el mensaje no sea efectivo o apropiado.",
+      "opciones": [
+        {"tono": "Formal", "descripcion": "Profesional, estructurado, sin coloquialismos", "uso": "Documentos oficiales, entornos profesionales"},
+        {"tono": "Informal", "descripcion": "Amigable, conversacional, cercano", "uso": "Comunicación con amigos, redes sociales"},
+        {"tono": "Técnico", "descripcion": "Preciso, con terminología especializada", "uso": "Documentación técnica, informes especializados"},
+        {"tono": "Académico", "descripcion": "Riguroso, con citas, strukturierter", "uso": "Trabajos de investigación, tesis"},
+        {"tono": "Humorístico", "descripcion": "Divertido, irónico, ligero", "uso": "Contenido de entretenimiento, redes sociales"},
+        {"tono": "Persuasivo", "descripcion": "Convincente, orientado a la acción", "uso": "Ventas,arguments, propuestas"},
+        {"tono": "Didáctico", "descripcion": "Educativo, explicativo, paciente", "uso": "Enseñanza, tutoriales"},
+        {"tono": "Emocional", "descripcion": "Con carga emocional, empático", "uso": "Narrativas, historias, mensajes personales"}
+      ],
+      "palabras_tono": ["tono", "formal", "informal", "técnico", "académico", "humorístico", "serio", "amigable", "profesional", "persuasivo", "didáctico", "empático"],
+      "consejos": [
+        "Elige el tono según tu audiencia",
+        "Combina el tono con el rol para mayor coherencia",
+        "Un tono inconsistente puede confundir al lector"
+      ]
+    },
+    "audiencia": {
+      "definicion": "La audiencia define quién recibirá la respuesta final. Conocer a la audiencia permite adaptar el lenguaje, la complejidad y el enfoque.",
+      "importancia": "Lo mismo explicado a un niño de 8 años vs. a undoctor será radicalmente diferente. La audiencia determina el nivel de detalle y el vocabulario.",
+      "elementos": [
+        {"caracteristica": "Nivel de conocimiento", "opciones": ["Principiante", "Intermedio", "Avanzado", "Experto"]},
+        {"caracteristica": "Edad", "opciones": ["Niños", "Adolescentes", "Adultos", "Adultos mayores"]},
+        {"caracteristica": "Contexto educativo", "opciones": ["Estudiantes", "Profesionales", "Investigadores", "Público general"]},
+        {"caracteristica": "Profesión", "opciones": ["Médicos", "Abogados", "Ingenieros", "Docentes", "Emprendedores"]}
+      ],
+      "palabras_audiencia": ["para", "destinado a", "enfoque para", "dirigido a", "audiencia", "público", "dirigido a"],
+      "ejemplos": [
+        "para niños de 8 años",
+        "dirigido a especialistas en derecho penal",
+        "enfoque para emprendedores",
+        "para estudiantes universitarios de primer año",
+        "destinado a ejecutivos de empresas"
+      ],
+      "consejos": [
+        "Specifies el nivel de conocimiento previo",
+        "Considera el contexto en que recibirán la información",
+        "Adaptar el vocabulario al nivel de la audiencia"
+      ]
+    },
+    "senales_cues": {
+      "definicion": "Las señales (cues) son frases disparadoras que orientan la salida o hacen que el texto generado inicie o contenga elementos específicos.",
+      "importancia": "Ayudan a guiar la dirección del contenido y asegurar que ciertos elementos estén presentes.",
+      "ejemplos": [
+        "Comienza tu respuesta con: 'En primer lugar...'",
+        "Incluye al menos 3 ejemplos prácticos",
+        "Finaliza con una recomendación concreta",
+        "Asegúrate de mencionar los siguientes términos:..."
+      ],
+      "consejos": [
+        "Usa señales para controlar la estructura",
+        "Pueden usarse para forzar la inclusión de elementos clave",
+        "Útiles para mantener consistencia en múltiples generaciones"
+      ]
+    },
+    "restricciones": {
+      "definicion": "Las restricciones definen explícitamente qué NO debe hacer la IA o qué elementos debe evitar.",
+      "importancia": "Ayudan a prevenir respuestas no deseadas y a enfocar la salida en lo que realmente necesitas.",
+      "ejemplos": [
+        "No incluyas ejemplos extremos",
+        "Evita usar jerga técnica",
+        "No menciones precios",
+        "Limita la respuesta a 200 palabras",
+        "No adjetivos calificativos innecesarios"
+      ],
+      "palabras_restriccion": ["evita", "no", "prohíbes", "limitado a", "sin", "nunca", "excepto"],
+      "consejos": [
+        "Specifies explícitamente lo que no quieres",
+        "Útil para evitar respuestas demasiado largas o detalladas",
+        "Complementa las instrucciones positivas con restricciones"
+      ]
+    }
+  },
+  "criterios_analisis": {
+    "presencia_componentes": {
+      "instruccion": {
+        "peso": 20,
+        "palabras_clave": ["genera", "redacta", "escribe", "crea", "analiza", "resume", "explica", "describe", "haz", "elabora", "desarrolla", "construye", "traduce", "compara", "evalúa"],
+        "mensaje_presente": "✅ Tiene instrucción clara - El prompt indica específicamente qué acción debe realizar la IA",
+        "mensaje_faltante": "⚠️ Falta instrucción clara - Especifica qué quieres que haga la IA: generar, redactar, analizar, resumir, explicar, crear, etc.",
+        "consejo": "Usa verbos de acción claros al inicio del prompt"
+      },
+      "contexto": {
+        "peso": 20,
+        "indicadores": ["en", "durante", "cuando", "donde", "lugar", "ciudad", "barrio", "fecha", "hora", "situación", "contexto", "antecedentes", "para", "considerando"],
+        "mensaje_presente": "✅ Incluye contexto relevante - El prompt proporciona información de fondo necesaria",
+        "mensaje_faltante": "⚠️ Falta contexto - Añade detalles sobre lugar, tiempo, situación, circunstancias o antecedentes relevantes",
+        "consejo": "Cuanto más específico seas con el contexto, mejores resultados obtendrás"
+      },
+      "rol": {
+        "peso": 15,
+        "palabras_clave": ["actúa como", "eres", "como si", "ponte en", "tu rol es", "role", "扮演", "simula ser", "desde la perspectiva de"],
+        "mensaje_presente": "✅ Define un rol específico - La IA sabe desde qué perspectiva responder",
+        "mensaje_faltante": "ℹ️ Considera definir un rol - Añade 'actúa como X' o 'eres X' para mayor precisión",
+        "consejo": "Definir un rol ayuda a la IA a usar el vocabulario y enfoque correcto"
+      },
+      "formato": {
+        "peso": 15,
+        "palabras_clave": ["en forma de", "formato", "estructura", "como", "tabla", "lista", "json", "párrafo", "organizado en", "estructurado"],
+        "mensaje_presente": "✅ Especifica formato de respuesta - Se indica cómo debe estructurarse la salida",
+        "mensaje_faltante": "ℹ️ Considera especificar el formato - Indica si quieres tabla, lista, párrafo, JSON, etc.",
+        "consejo": "El formato claro facilita usar la información generada"
+      },
+      "tono": {
+        "peso": 10,
+        "palabras_clave": ["tono", "formal", "informal", "técnico", "académico", "humorístico", "serio", "amigable", "profesional", "persuasivo"],
+        "mensaje_presente": "✅ Define tono deseado - Se especifica el estilo de comunicación",
+        "mensaje_faltante": "ℹ️ Considera definir el tono - Especifica si quieres un estilo formal, informal, técnico, etc.",
+        "consejo": "El tono debe ser apropiado para la audiencia objetivo"
+      },
+      "audiencia": {
+        "peso": 10,
+        "indicadores": ["para", "destinado a", "enfoque para", "dirigido a", "audiencia", "público", "dirigido a", "destinado a"],
+        "mensaje_presente": "✅ Considera la audiencia - Se indica quién recibirá la información",
+        "mensaje_faltante": "ℹ️ Considera especificar la audiencia - Indica para quién es la respuesta (estudiantes, profesionales, etc.)",
+        "consejo": "Conocer tu audiencia permite adaptar el lenguaje y nivel de detalle"
+      },
+      "restricciones": {
+        "peso": 10,
+        "indicadores": ["evita", "no", "sin", "prohíbes", "limitado a", "nunca", "excepto"],
+        "mensaje_presente": "✅ Incluye restricciones - El prompt especifica qué evitar",
+        "mensaje_faltante": "ℹ️ Opcional: añade restricciones si hay algo específico que quieres evitar",
+        "consejo": "Las restricciones ayudan a enfocar la respuesta"
+      }
+    },
+    "calidad_prompt": {
+      "longitud_minima": 20,
+      "longitud_óptima_min": 50,
+      "longitud_óptima_max": 500,
+      "palabras_minimas": 3,
+      "evaluaciones": {
+        "muy_corto": {
+          "texto": "⚠️ Muy corto",
+          "consejo": "El prompt es muy corto. Añade más contexto y detalles para obtener mejores resultados."
+        },
+        "corto": {
+          "texto": "⚠️ Corto",
+          "consejo": "El prompt es algo breve. Considera añadir más información contextual para mejorar la respuesta."
+        },
+        "adecuado": {
+          "texto": "✅ Longitud adecuada",
+          "consejo": "La longitud del prompt es apropiada para la tarea."
+        },
+        "largo": {
+          "texto": "ℹ️ Largo",
+          "consejo": "El prompt es extenso. Podrías simplificarlo manteniendo los elementos esenciales."
+        },
+        "muy_largo": {
+          "texto": "⚠️ Muy largo",
+          "consejo": "El prompt es muy largo. Considera reducirlo manteniendo solo la información clave."
+        },
+        "palabras_insuficientes": {
+          "texto": "⚠️ Pocas palabras",
+          "consejo": "El prompt parece incompleto. Usa oraciones completas con al menos 3 palabras."
+        },
+        "claridad_alta": {
+          "texto": "✅ Alto",
+          "consejo": "El prompt es claro y específico."
+        },
+        "claridad_media": {
+          "texto": "⚠️ Media",
+          "consejo": "El prompt tiene claridad moderada. Evita palabras genéricas como 'algo', 'cosas', 'mejor'."
+        },
+        "claridad_baja": {
+          "texto": "⚠️ Baja",
+          "consejo": "El prompt es ambiguo. Evita palabras genéricas como 'algo', 'cosas', 'mejor', 'interesante'."
+        }
+      }
+    },
+    "analisis_estructural": {
+      "descripcion": "Análisis de la estructura interna del prompt",
+      "criterios": [
+        {
+          "criterio": "Coherencia",
+          "descripcion": "Las diferentes partes del prompt están relacionadas y tienen sentido juntas",
+          "evalua": "Si los componentes (instrucción, contexto, formato) se relacionan lógicamente"
+        },
+        {
+          "criterio": "Completitud",
+          "descripcion": "El prompt tiene todos los elementos necesarios para completar la tarea",
+          "evalua": "Si falta información esencial para que la IA pueda responder adecuadamente"
+        },
+        {
+          "criterio": "Especificidad",
+          "descripcion": "El prompt es detallado y preciso en lugar de vago",
+          "evalua": "Si usa términos específicos o genéricos"
+        },
+        {
+          "criterio": "Orden lógico",
+          "descripcion": "Los elementos están organizados de manera clara",
+          "evalua": "Si la instrucción principal aparece cerca del inicio"
+        }
+      ]
+    }
+  },
+  "reglas": [
+    {
+      "regla": "Especificar claramente el rol de la IA",
+      "ejemplo": "Actúa como un abogado penalista colombiano con 15 años de experiencia",
+      "razon": "El rol define el conocimiento y vocabulario que usará la IA"
+    },
+    {
+      "regla": "Definir el objetivo del prompt en una sola frase clara",
+      "ejemplo": "Redacta un informe legal sobre el caso de hurto",
+      "razon": "Un objetivo claro guía toda la respuesta"
+    },
+    {
+      "regla": "Incluir contexto relevante (lugar, tiempo, situación)",
+      "ejemplo": "ocurrido en Bogotá durante la noche del pasado sábado",
+      "razon": "El contexto proporciona la información de fondo necesaria"
+    },
+    {
+      "regla": "Evitar palabras ambiguas o genéricas",
+      "ejemplos": ["cosas", "algo", "mejor", "interesante", "bien", "mucho"],
+      "razon": "Estas palabras no dan información específica a la IA"
+    },
+    {
+      "regla": "Usar ejemplos concretos para guiar la respuesta",
+      "ejemplo": "Incluye un ejemplo de contrato de arrendamiento",
+      "razon": "Los ejemplos clarifican exactamente qué tipo de resultado esperas"
+    },
+    {
+      "regla": "Especificar el formato de respuesta deseado",
+      "ejemplo": "en formato de tabla con 3 columnas",
+      "razon": "Evita que la IA decida por ti cómo estructurar la información"
+    },
+    {
+      "regla": "Definir el tono (formal, informal, técnico, académico)",
+      "ejemplo": "usa un tono formal y técnico",
+      "razon": "El tono debe ser apropiado para la audiencia"
+    },
+    {
+      "regla": "Considerar la audiencia objetivo",
+      "ejemplo": "para estudiantes de derecho de primer año",
+      "razon": "La audiencia determina el nivel de complejidad del lenguaje"
+    },
+    {
+      "regla": "Ser específico y detallado en lugar de vago",
+      "ejemplo": "analiza los 3 argumentos principales de la defensa",
+      "razon": "La especificidad produce respuestas más precisas"
+    },
+    {
+      "regla": "Usar instrucciones imperativas claras",
+      "ejemplos": ["Genera", "Redacta", "Analiza", "Resume", "Explica"],
+      "razon": "Los verbos de acción indican claramente qué hacer"
+    },
+    {
+      "regla": "Añadir restricciones cuando sea necesario",
+      "ejemplo": "No incluyas ejemplos extremos ni situaciones hipotéticas",
+      "razon": "Las restricciones previenen respuestas no deseadas"
+    },
+    {
+      "regla": "Iterar y refinar el prompt si es necesario",
+      "ejemplo": "Si la respuesta no es lo que buscas, reformula con más detalles",
+      "razon": "El primer intento raramente es perfecto"
+    }
+  ],
+  "estrategias_prompting": [
+    {
+      "id": "A",
+      "nombre": "System Message",
+      "descripcion": "Mensaje inicial que define rol, tono y reglas del modelo. Es la configuración base que afecta todas las respuestas siguientes.",
+      "ejemplo": "Eres un asistente legal especializado en derecho penal colombiano. Respondes de forma formal y precisa, citando siempre las normas aplicables.",
+      "cuando_usar": "Controlar estilo, consistencia y seguridad de las respuestas. Establecer el contexto general.",
+      "dificultad": "Baja",
+      "consejos": ["Coloca el system message al inicio", "Sé específico con las reglas", "Puedes combinar múltiples configuraciones"]
+    },
+    {
+      "id": "B",
+      "nombre": "Zero-shot Prompting",
+      "descripcion": "Se pide una tarea sin proporcionar ejemplos previos. La IA debe inferir qué hacer solo con la instrucción.",
+      "ejemplo": "Resume el siguiente artículo en 3 puntos clave: [artículo]",
+      "cuando_usar": "Respuestas rápidas sin necesidad de referencia. Tareas simples o bien definidas.",
+      "dificultad": "Baja",
+      "consejos": ["Funciona bien para tareas comunes", "Sé muy claro con la instrucción", "Para tareas complejas, usa otras estrategias"]
+    },
+    {
+      "id": "C",
+      "nombre": "One-shot Prompting",
+      "descripcion": "Se proporciona un solo ejemplo de entrada y la salida esperada para guiar a la IA.",
+      "ejemplo": "Input: 'El cielo está azul' -> Output: 'El cielo tiene color azul'. Ahora haz: 'El pasto es verde'",
+      "cuando_usar": "Aclarar formato esperado con mínima guía. Cuando necesitas un estilo específico.",
+      "dificultad": "Media",
+      "consejos": ["El ejemplo debe ser representativo", "Muestra exactamente el formato que quieres", "Funciona bien para tareas estructuradas"]
+    },
+    {
+      "id": "D",
+      "nombre": "Few-shot Prompting",
+      "descripcion": "Se incluyen varios ejemplos en el prompt para que la IA entienda mejor el patrón deseado.",
+      "ejemplo": "Input: 'gato' -> 'mamífero peludo que maúlla'. Input: 'perro' -> 'mamífero que ladra'. Input: 'pájaro' ->",
+      "cuando_usar": "Mejorar precisión en tareas complejas o con formatos específicos. Aprendizaje de estilos.",
+      "dificultad": "Media",
+      "consejos": ["Usa 3-5 ejemplos como máximo", "Los ejemplos deben ser diversos", "Ayuda a la IA a entender patrones complejos"]
+    },
+    {
+      "id": "E",
+      "nombre": "Break the Task Down (Descomponer Tarea)",
+      "descripcion": "Dividir tareas grandes o complejas en subtareas más pequeñas y manejables.",
+      "ejemplo": "1. Primero identifica los argumentos principales. 2. Luego analiza cada uno. 3. Finalmente resume las conclusiones.",
+      "cuando_usar": "Resolver problemas complejos paso a paso. Tareas con múltiples partes.",
+      "dificultad": "Media",
+      "consejos": ["Numera claramente cada paso", "Sé específico con cada subtarea", "Permite mejor control del proceso"]
+    },
+    {
+      "id": "F",
+      "nombre": "Chain of Thought (CoT)",
+      "descripcion": "Se guía al modelo con razonamiento intermedio paso a paso, pidiendo que 'piensa en voz alta'.",
+      "ejemplo": "Pensemos paso a paso: Si hay 5 manzanas y comes 2, ¿cuántas quedan? Primero: Tenemos 5 manzanas. Segundo: Comes 2. Tercero: 5 - 2 = 3.",
+      "cuando_usar": "Resolver problemas lógicos, matemáticos o que requieren razonamiento complejo.",
+      "dificultad": "Media-Alta",
+      "consejos": ["La frase 'pensemos paso a paso' ayuda", "Especifica los pasos de razonamiento", "Reduce errores en cálculos"]
+    },
+    {
+      "id": "G",
+      "nombre": "Conocimiento Integrado",
+      "descripcion": "Combina el modelo con fuentes externas de conocimiento o referencias específicas.",
+      "ejemplo": "Basándote en el Código Penal colombiano (Ley 599 de 2000), define qué es el hurto simple y menciona los artículos aplicables.",
+      "cuando_usar": "Reducir errores y mejorar precisión factual. Trabajos con bases de conocimiento específicas.",
+      "dificultad": "Media",
+      "consejos": ["Cita las fuentes específicas", "Ayuda a la IA a dar respuestas más precisas", "Útil para temas legales, científicos, técnicos"]
+    },
+    {
+      "id": "H",
+      "nombre": "Skeleton-of-Thought (Esqueleto de Pensamiento)",
+      "descripcion": "El modelo genera primero un esquema o estructura y luego desarrolla cada sección.",
+      "ejemplo": "Primero crea un esquema de un informe de policía. Luego desarrolla cada sección: 1. Datos básicos, 2. Hechos, 3. Análisis, 4. Conclusiones.",
+      "cuando_usar": "Mantener estructura clara y acelerar generación. Informes y documentos estructurados.",
+      "dificultad": "Media",
+      "consejos": ["Especifica las secciones del esquema", "Permite revisar la estructura antes de desarrollar", "Mantiene coherencia en documentos largos"]
+    },
+    {
+      "id": "I",
+      "nombre": "Super-prompt",
+      "descripcion": "Prompt muy detallado que incluye contexto extenso, instrucciones específicas, ejemplos y formato definido.",
+      "ejemplo": "Eres un profesor de derecho penal. Explica a estudiantes de primer año qué es el delito de hurto. Usa lenguaje académico pero accesible. Incluye ejemplos de la vida cotidiana. Formato: introducción, desarrollo en 3 puntos, conclusión.",
+      "cuando_usar": "Resultados consistentes y de alta calidad. Cuando necesitas control total sobre la salida.",
+      "dificultad": "Alta",
+      "consejos": ["Incluye todos los componentes relevantes", "Sé específico con cada elemento", "Requiere práctica dominar esta técnica"]
+    },
+    {
+      "id": "J",
+      "nombre": "TAM (Tarea, Acción, Meta)",
+      "descripcion": "Prompt estructurado en tres partes: Tarea (qué), Acción (cómo) y Meta (para qué).",
+      "ejemplo": "Tarea: Crear un informe de ventas. Acción: Redactar documento formal. Meta: Que sirva como evidencia para la junta directiva.",
+      "cuando_usar": "Claridad y enfoque en objetivos específicos. Proyectos con propósito claro.",
+      "dificultad": "Baja",
+      "consejos": ["Separa claramente las tres partes", "Ayuda a mantener el enfoque", "Útil para objetivos empresariales"]
+    },
+    {
+      "id": "K",
+      "nombre": "ADP (Antes, Después, Puente)",
+      "descripcion": "Describe la situación inicial, el resultado deseado y el puente o camino que los conecta.",
+      "ejemplo": "Antes: Ciudad con mucho tráfico y contaminación. Después: Ciudad con movilidad fluida y aire limpio. Puente: Implementar ciclovías los domingos y promover transporte público.",
+      "cuando_usar": "Narrativas persuasivas, copywriting, propuestas de cambio.",
+      "dificultad": "Media",
+      "consejos": ["Sé específico con el 'antes' y 'después'", "El 'puente' debe seractionable", "Funciona bien para presentaciones"]
+    },
+    {
+      "id": "L",
+      "nombre": "CARE (Contexto, Acción, Resultado, Ejemplo)",
+      "descripcion": "Marco que define cuatro elementos: Contexto, Acción, Resultado esperado y Ejemplo ilustrativo.",
+      "ejemplo": "Contexto: Estudiantes de derecho de primer año. Acción: Explicar los delitos contra el patrimonio. Resultado: Que comprendan los tipos de hurto. Ejemplo: 'El hurto de un celular en un bus...'",
+      "cuando_usar": "Prompts detallados y aplicables. Educación y formación.",
+      "dificultad": "Media",
+      "consejos": ["Los cuatro elementos deben estar claros", "El ejemplo hace más concreto el resultado", "Excelente para contenido educativo"]
+    },
+    {
+      "id": "M",
+      "nombre": "Role-playing (Interpretar rol)",
+      "descripcion": "La IA asume un personaje, profesión o perspectiva específica para responder.",
+      "ejemplo": "Eres un policía de la Dijín con 20 años de experiencia. Instruyes a un recluta sobre cómo conducir una entrevista criminal efectiva.",
+      "cuando_usar": "Obtener respuestas desde una perspectiva específica. Simulaciones y entrenamiento.",
+      "dificultad": "Baja",
+      "consejos": ["Define claramente el rol y experiencia", "Combina con el contexto adecuado", "Funciona bien para perspectivas profesionales"]
+    },
+    {
+      "id": "N",
+      "nombre": "Persona Pattern (Patrón de Persona)",
+      "descripcion": "Define una persona específica como referencia, incluyendo estilo y características.",
+      "ejemplo": "Responde como lo haría un profesor universitario con doctorado en derecho penal, usando el estilo de clases magistrales con ejemplos prácticos.",
+      "cuando_usar": "Obtener tono y estilo específico. Contenido que requiere personalidad definida.",
+      "dificultad": "Baja",
+      "consejos": ["Nombra una persona o tipo específico", "Describe características de estilo", "Combina con el área de conocimiento"]
+    },
+    {
+      "id": "O",
+      "nombre": "Template Pattern (Patrón de Plantilla)",
+      "descripcion": "Proporciona una plantilla estructurada que la IA debe seguir.",
+      "ejemplo": "Usa esta estructura: 1. [Título], 2. [Resumen de 2 oraciones], 3. [3 puntos clave], 4. [Conclusión]",
+      "cuando_usar": "Formatos consistentes y predecibles. Documentos estandarizados.",
+      "dificultad": "Baja",
+      "consejos": ["La plantilla debe estar bien definida", "Usa corchetes para los elementos a completar", "Asegura consistencia en múltiples respuestas"]
+    },
+    {
+      "id": "P",
+      "nombre": "Output Automatization (Automatización de Salida)",
+      "descripcion": "Instrucciones para que la IA genere código o automatizaciones.",
+      "ejemplo": "Crea un script en JavaScript que automatice el envío de emails de recordatorio cuando una tarea se vence.",
+      "cuando_usar": "Tareas de programación y desarrollo.",
+      "dificultad": "Media",
+      "consejos": ["Especifica el lenguaje de programación", "Describe claramente la funcionalidad", "Incluye ejemplos de uso"]
+    },
+    {
+      "id": "Q",
+      "nombre": "Iterative Refinement (Refinamiento Iterativo)",
+      "descripcion": "Pedir mejoras sucesivas al resultado en múltiples pasos.",
+      "ejemplo": "Paso 1: Genera un primer borrador. Paso 2: 'Mejora la introducción haciéndola más atractiva'. Paso 3: 'Añade ejemplos prácticos al desarrollo'.",
+      "cuando_usar": "Refinar y mejorar contenido progresivamente. Creación de contenido de alta calidad.",
+      "dificultad": "Baja",
+      "consejos": ["Cada iteración debe tener un objetivo específico", "No太好 (no太好) - no太好 es 'no excesivamente' en chino", "Permite pulir cada aspecto"]
+    },
+    {
+      "id": "R",
+      "nombre": "Meta Prompting",
+      "descripcion": "Pedir a la IA que piense sobre cómo abordar el problema antes de resolverlo.",
+      "ejemplo": "¿Cuál es la mejor manera de estructurar una respuesta sobre física cuántica para un niño de 10 años? Después, impleméntala.",
+      "cuando_usar": "Encontrar mejores enfoques. Problemas que requieren planificación.",
+      "dificultad": "Alta",
+      "consejos": ["La pregunta meta debe ser específica", "Útil para tareas complejas o no familiares", "Hace que la IA reflexione sobre el proceso"]
+    },
+    {
+      "id": "S",
+      "nombre": "Refusal Calibration",
+      "descripcion": "Dar instrucciones específicas sobre cómo manejar solicitudes que no se deben cumplir.",
+      "ejemplo": "Si no tienes información suficiente para responder con precisión, indica exactamente qué información adicional necesitas.",
+      "cuando_usar": "Controlar respuestas a preguntas fuera de contexto.",
+      "dificultad": "Media",
+      "consejos": ["Specify cómo quieres que Decline requests", "Ayuda a obtener respuestas más honestas", "Útil para aplicaciones profesionales"]
+    },
+    {
+      "id": "T",
+      "nombre": "Mood Steering",
+      "descripcion": "Controlar el estado emocional o tono general de la respuesta.",
+      "ejemplo": "Explica los beneficios del ejercicio con un tono entusiasta y motivador, evitando simplemente listar datos.",
+      "cuando_usar": "Contenido emocional o motivacional.",
+      "dificultad": "Media",
+      "consejos": ["Describe el estado de ánimo deseado", "Combina con el tono apropiado", "Útil para marketing y contenido emocional"]
+    }
+  ],
+  "ejemplos_buenos": [
+    {
+      "prompt": "Actúa como un abogado penalista colombiano con 15 años de experiencia. Redacta un informe legal sobre un caso de hurto aggravado ocurrido en Bogotá. El documento debe tener formato de demanda, tono formal y técnico, incluyendo: 1) hechos, 2) análisis jurídico con referencias al Código Penal, 3) pretensiones. Dirigido a un juez penal.",
+      "analisis": "✅ Excelente prompt - Define rol específico (abogado penalista con experiencia), incluye contexto detallado (lugar: Bogotá, tipo de delito), especifica formato (demanda), tono (formal-técnico) y audiencia (juez penal)."
+    },
+    {
+      "prompt": "Eres profesor de historia universal. Explica la Revolución Francesa usando un tono académico pero accesible para estudiantes de bachillerato. Incluye una línea de tiempo, causas principales y consecuencias. Formato: ensayo de 500 palabras.",
+      "analisis": "✅ Muy buen prompt - Define rol (profesor), tono (académico accesible), audiencia (bachillerato), contenido específico (línea de tiempo, causas, consecuencias) y extensión (500 palabras)."
+    },
+    {
+      "prompt": "Como nutricionista certificada, crea un plan de alimentación semanal para una persona vegana que hace ejercicio 4 veces por semana. Considera un presupuesto moderado (máximo $50 USD semanales). Formato: tabla con días, comidas, calorías y macros.",
+      "analisis": "✅ Buen prompt - Rol definido (nutricionista vegana), contexto específico (ejercicio regular), restricciones (presupuesto), formato claro (tabla con datos específicos)."
+    },
+    {
+      "prompt": "Redacta un correo electrónico formal para un cliente quejándose del servicio recibido en nuestra empresa de tecnología. El tono debe ser profesional pero asertivo. Estructura: 1) Saludo formal, 2) Descripción del problema con fechas específicas, 3) Evidencia de los intentos de resolución, 4) Solicitud clara de solución, 5) Despedida con contacto.",
+      "analisis": "✅ Buen prompt - Especifica la tarea, tono, estructura detallada con 5 secciones claramente definidas. Muy útil para comunicación empresarial."
+    },
+    {
+      "prompt": "Como analista financiero senior, analiza las acciones de una empresa tecnológica usando el método DCF (Discounted Cash Flow). Explica cada paso en términos simples para un inversor principiante. Formato: informe con gráficos ASCII que muestren el flujo de caja proyectado a 5 años.",
+      "analisis": "✅ Excelente - Define rol especializado (analista financiero), método específico (DCF), nivel de detalle para la audiencia (principiante), formato visual (gráficos ASCII)."
+    },
+    {
+      "prompt": "Eres un chef colombiano especializado en cuisine tradicional. Receta auténtica de ají con los siguientes requisitos: 1) Ingredientes accesibles en Colombia, 2) Niveau de dificultad: intermedio, 3) Tiempo de preparación: 30 minutos, 4) Historia breve del plato, 5) Variaciones regionales. Formato: receta detallada con pasos numerados.",
+      "analisis": "✅ Muy completo - Rol específico (chef colombiano tradicional), requisitos claros (ingredientes, dificultad, tiempo), contenido específico (historia, variaciones), formato estructurado."
+    },
+    {
+      "prompt": "Actúa como un psicólogo clínico especializado en terapia cognitivo-conductual. Da consejos prácticos para manejar la ansiedad antes de un examen importante. El tono debe ser empático y esperanzador. Audiencia: estudiantes universitarios. Formato: lista de 7 estrategias con explicación breve de cada una.",
+      "analisis": "✅ Excelente - Rol especializado (psicólogo TCC), tema específico (ansiedad pre-examen), tono definido (empático), audiencia clara (estudiantes), formato y cantidad específicos (7 estrategias)."
+    }
+  ],
+  "ejemplos_malos": [
+    {
+      "prompt": "Haz un informe",
+      "problema": "Sin instrucción clara, sin contexto, sin formato, sin audiencia. Totalmente ambiguo.",
+      "sugerencia": "Especifica qué tipo de informe, sobre qué tema, para quién, en qué formato. Ejemplo: 'Haz un informe sobre las ventas del trimestre en formato tabla'"
+    },
+    {
+      "prompt": "Escribe algo sobre crimen",
+      "problema": "Vago, ambiguo, sin contexto, sin dirección. 'Algo' y 'crimen' son términos demasiado genéricos.",
+      "sugerencia": "Define el tipo de crimen (hurto, asesinato, fraude), el enfoque (legal, social, histórico), el formato y la extensión."
+    },
+    {
+      "prompt": "Mejor respuesta",
+      "problema": "Incompleto, no especifica qué mejorar ni sobre qué tema. No es una instrucción válida.",
+      "sugerencia": "Describe específicamente qué necesitas mejorar y cuáles son los criterios. Ejemplo: 'Mejora la introducción de este texto haciéndola más clara'"
+    },
+    {
+      "prompt": "Cuéntame sobre legales",
+      "problema": "Muy genérico, sin tema específico, sin contexto, sin formato. 'Legales' abarca demasiadas áreas.",
+      "sugerencia": "Especifica área legal (penal, civil, laboral), profundidad, audiencia, formato. Ejemplo: 'Explica los conceptos básicos del derecho laboral colombiano'"
+    },
+    {
+      "prompt": "Ayúdame",
+      "problema": "Totalmente ambiguo, no hay contexto de qué se necesita ayuda. No especifica la tarea.",
+      "sugerencia": "Explica claramente el problema o tarea específica que necesitas resolver. Ejemplo: 'Ayúdame a redactar una carta de presentación para un trabajo de ventas'"
+    },
+    {
+      "prompt": "Información sobre Python",
+      "problema": "Sin especificar qué tipo de información, nivel, formato o propósito.",
+      "sugerencia": "Especifica el nivel (básico, avanzado), el tema específico (sintaxis, funciones, clases), el propósito (aprendizaje, referencia rápida) y el formato (tutorial, cheat sheet)."
+    },
+    {
+      "prompt": "Hazlo mejor",
+      "problema": "No hay referencia de qué mejorar ni criterios de 'mejor'.",
+      "sugerencia": "Proporciona el texto original y especifica qué aspectos mejorar (claridad, tono, extensión, estructura)."
+    },
+    {
+      "prompt": "Resumen",
+      "problema": "Sin especificar qué resumir, cuánto tiempo debe durar, el enfoque.",
+      "sugerencia": "Indica el texto o tema a resumir, la extensión deseada y el enfoque (puntos clave, detallado, ejecutivo)."
+    }
+  ],
+  "plantillas": [
+    {
+      "nombre": "Plantilla Básica con Rol",
+      "estructura": "Actúa como [ROL] y [INSTRUCCIÓN] sobre [TEMA] para [AUDIENCIA] en formato [FORMATO].",
+      "ejemplo": "Actúa como profesor de biología y explica el sistema digestivo para estudiantes de secundaria en formato de presentación.",
+      "usar_cuando": "Principiantes - Estructura simple y fácil de recordar"
+    },
+    {
+      "nombre": "Plantilla Completa",
+      "estructura": "Eres [ROL]. [CONTEXTO]. Realiza [ACCIÓN] sobre [TEMA]. El tono debe ser [TONO]. La audiencia es [AUDIENCIA]. Formato: [FORMATO]. Extensión: [EXTENSIÓN].",
+      "ejemplo": "Eres periodista especializado en tecnología. Para un periódico local, escribe una noticia sobre el aumento del reciclaje en la ciudad. Tono informativo. Audiencia: lectores generales. Formato: noticia de 300 palabras.",
+      "usar_cando": "Cuando necesitas control total sobre todos los aspectos"
+    },
+    {
+      "nombre": "Plantilla educativa",
+      "estructura": "Explica [CONCEPTO] como si [AUDIENCIA]. Incluye [ELEMENTOS]. Evita [RESTRICCIONES].",
+      "ejemplo": "Explica la fotosíntesis como si fuera un cuento para niños de 8 años. Incluye personajes animados. Evita tecnicismos.",
+      "usar_cuando": "Contenido educativo y explicativo"
+    },
+    {
+      "nombre": "Plantilla profesional",
+      "estructura": "Como [PROFESIÓN], necesito [RESULTADO] para [PROPÓSITO]. Considera [RESTRICCIONES]. Formato: [FORMATO].",
+      "ejemplo": "Como abogado necesito un contrato de arrendamiento para un apartamento en Bogotá. Considera las leyes colombianas vigentes. Formato: documento legal con cláusulas estándar.",
+      "usar_cuando": "Entornos profesionales y empresariales"
+    },
+    {
+      "nombre": "Plantilla creativa",
+      "estructura": "Crea [TIPO DE CONTENIDO] sobre [TEMA] con [ESTILO]. Incluye [ELEMENTOS]. Longitud: [EXTENSIÓN].",
+      "ejemplo": "Crea un poema sobre la tecnología con estilo romántico moderno. Incluye referencias a la vida cotidiana. Longitud: 4 estrofas de 4 versos.",
+      "usar_cuando": "Contenido creativo y artístico"
+    },
+    {
+      "nombre": "Plantilla técnica",
+      "estructura": "Eres [ESPECIALISTA]. Desarrolla [FUNCIONALIDAD] usando [TECNOLOGÍA]. Requisitos: [REQUISITOS]. Formato: [FORMATO] con código documentado.",
+      "ejemplo": "Eres desarrollador senior. Desarrolla una función de login usando JavaScript y JWT. Requisitos: validación de email, hash de contraseña, token de 24h. Formato: código con comentarios.",
+      "usar_cuando": "Programación y desarrollo técnico"
+    },
+    {
+      "nombre": "Plantilla analítica",
+      "estructura": "Analiza [DATOS/TEXTO] desde la perspectiva de [ROL/MÉTODO]. Identifica [ELEMENTOS]. Proporciona [RESULTADOS]. Formato: [FORMATO].",
+      "ejemplo": "Analiza los estados financieros de la empresa desde la perspectiva de un auditor. Identifica riesgos financieros y oportunidades de mejora. Proporciona recomendaciones. Formato: informe ejecutivo con tablas.",
+      "usar_cuando": "Análisis de datos e informes"
+    },
+    {
+      "nombre": "Plantilla TAM",
+      "estructura": "Tarea: [QUÉ HACER]. Acción: [CÓMO HACERLO]. Meta: [PARA QUÉ].",
+      "ejemplo": "Tarea: Crear una presentación. Acción: Desarrollar 10 diapositivas en PowerPoint. Meta: Convencer a inversores sobre el proyecto.",
+      "usar_cuando": "Objetivos empresariales y de proyectos"
+    }
+  ],
+  "palabras_a_evitar": [
+    {"palabra": "algo", "alternativa": "específico: informe, análisis, resumen, historia", "razon": "No proporciona información útil"},
+    {"palabra": "cosas", "alternativa": "específico: elementos, aspectos, detalles, componentes", "razon": "Muy vago e impreciso"},
+    {"palabra": "mejor", "alternativa": "específico: más detallado, más claro, más conciso, más completo", "razon": "No define qué tipo de 'mejoría'"},
+    {"palabra": "interesante", "alternativa": "específico: relevante, útil, importante, surprising", "razon": "Subjetivo y ambiguo"},
+    {"palabra": "bien", "alternativa": "específico: correctamente, con precisión, de manera efectiva", "razon": "No define el标准"},
+    {"palabra": "mucho", "alternativa": "específico: detalladamente, extensamente, en profundidad", "razon": "No cuantifica la cantidad"},
+    {"palabra": "rápido", "alternativa": "específico: en 5 minutos, en 200 palabras, de forma inmediata", "razon": "No define el tiempo exacto"},
+    {"palabra": "bueno", "alternativa": "específico: efectivo, útil, relevante, de calidad", "razon": "Depende del contexto y subjetivo"},
+    {"palabra": "genérico", "alternativa": "específico: particular, definido, concreto", "razon": "Lo genérico no ayuda a la IA"},
+    {"palabra": "normal", "alternativa": "específico: estándar, habitual, común", "razon": "No define qué es 'normal'"}
+  ],
+  "consejos_practicos": [
+    "Cuanto más específico seas, mejores resultados obtendrás. La IA no puede adivinar detalles que no proporcionas.",
+    "Si no obtienes lo que quieres, reformula el prompt con más detalles. La iteración es clave.",
+    "Usa ejemplos cuando quieras un formato específico. Los ejemplos son más claros que las instrucciones.",
+    "Define el rol al inicio para establecer el contexto desde el principio.",
+    "Separa las instrucciones con números o bullets para mayor claridad y estructura.",
+    "Indica explícitamente lo que NO quieres que haga usando restricciones.",
+    "Para tareas complejas, usa pensamiento encadenado (step by step).",
+    "Itera: el primer resultado a menudo necesita refinamiento. No te rindas en el primer intento.",
+    "Cuando uses términos técnicos, asegúrate de que la audiencia los entienda.",
+    "Si la respuesta es demasiado larga, especifica un límite de palabras o extensión.",
+    "Si es muy corta, pide más detalle o ejemplos.",
+    "Para información actualizada, menciona la fecha o pide基于最新信息.",
+    "Cuando pidas formato específico, sé consistente con los nombres de secciones.",
+    "Combina múltiples componentes para prompts más completos."
+  ],
+  "aprendizaje_estructurado": {
+    "niveles": [
+      {
+        "nivel": 1,
+        "nombre": "Básico",
+        "descripcion": "Puedes crear prompts simples con instrucción y tema",
+        "ejemplo": "Resume este artículo",
+        "puntuacion_necesaria": 40
+      },
+      {
+        "nivel": 2,
+        "nombre": "Intermedio",
+        "descripcion": "Incluyes contexto, rol y formato",
+        "ejemplo": "Como profesor, explica la fotosíntesis para niños en forma de historia",
+        "puntuacion_necesaria": 60
+      },
+      {
+        "nivel": 3,
+        "nombre": "Avanzado",
+        "descripcion": "Combinas múltiples estrategias y componentes",
+        "ejemplo": "Actúa como chef italiano. Receta de pasta carbonara con nivel intermedio. Incluye historia del plato. Formato: pasos numerados con fotos",
+        "puntuacion_necesaria": 80
+      },
+      {
+        "nivel": 4,
+        "nombre": "Experto",
+        "descripcion": "Prompts completos con estrategias avanzadas y restricciones",
+        "ejemplo": "Eres analista financiero. Usando el método DCF, analiza [empresa]. Explica para principiantes. Evita jerga excesiva. Formato: informe con gráficos. Limitado a 1000 palabras.",
+        "puntuacion_necesaria": 95
+      }
+    ],
+    "rutas_aprendizaje": [
+      {
+        "enfoque": "Escritura",
+        "objetivo": "Mejorar habilidades de redacción y escritura creativa",
+        "estrategias_recomendadas": ["A", "B", "C", "D", "M", "N"]
+      },
+      {
+        "enfoque": "Programación",
+        "objetivo": "Generar código de calidad y resolver problemas técnicos",
+        "estrategias_recomendadas": ["A", "G", "P", "Q"]
+      },
+      {
+        "enfoque": "Análisis",
+        "objetivo": "Extraer insights y analizar datos o textos",
+        "estrategias_recomendadas": ["E", "F", "G", "H"]
+      },
+      {
+        "enfoque": "Educación",
+        "objetivo": "Crear contenido educativo y explicativo",
+        "estrategias_recomendadas": ["A", "C", "L", "M", "N"]
+      },
+      {
+        "enfoque": "Negocios",
+        "objetivo": "Comunicación empresarial y profesional",
+        "estrategias_recomendadas": ["A", "J", "K", "O", "T"]
+      }
+    ]
+  },
+  "glosario": {
+    "terminos": [
+      {"termino": "LLM", "definicion": "Large Language Model - Modelo Grande de Lenguaje. Sistema de IA entrenado con大量 datos textuales para generar lenguaje natural."},
+      {"termino": "Prompt", "definicion": "Instrucción o entrada que se da a una IA para generar una respuesta."},
+      {"termino": "Prompt Engineering", "definicion": "Ingeniería de Prompts - Arte y ciencia de diseñar instrucciones efectivas para IAs."},
+      {"termino": "Zero-shot", "definicion": "Pedir una tarea sin proporcionar ejemplos previos."},
+      {"termino": "Few-shot", "definicion": "Proporcionar pocos ejemplos para guiar a la IA."},
+      {"termino": "Chain of Thought", "definicion": "Técnica de guiar a la IA con razonamiento paso a paso."},
+      {"termino": "System Message", "definicion": "Mensaje inicial que configura el comportamiento base del modelo."},
+      {"termino": "Token", "definicion": "Unidad mínima de texto que procesa la IA (puede ser una palabra o parte de ella)."},
+      {"termino": "Temperatura", "definicion": "Parámetro que controla la aleatoriedad de las respuestas. Alto = más creativo, bajo = más preciso."},
+      {"termino": "Hallucination", "definicion": "Cuando la IA genera información que parece real pero es falsa o inventada."}
+    ]
+  }
+}

@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia IAG - Guía de Inteligencia Artificial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn-tab.active {
+      background-color: #00FF41;
+      color: #006400;
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+    .subcampo {
+      display: none;
+      margin: 30px auto;
+      width: 80%;
+      padding: 20px;
+      border: 2px dashed #006400;
+      border-radius: 15px;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: left;
+    }
+    .subcampo.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 text-slate-900 pb-12">
+  <!-- HEADER ESTILO ACADEMIA IAG -->
+  <header class="bg-[#006400] text-white py-6 px-6 shadow-lg relative z-10">
+    <!-- Imágenes superiores derecha -->
+    <div class="absolute top-4 right-4 flex gap-3 items-center">
+      <img src="imagen policia nacional.png" alt="Policía Nacional" class="w-20 md:w-24">
+      <img src="imagen ecsan.png" alt="ECSAN" class="w-20 md:w-24">
+    </div>
+    <div class="text-center">
+      <img src="imagen icono.png" alt="Logo Academia IAG" class="w-24 md:w-28 mx-auto mb-4 rounded-lg shadow-md">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2 uppercase">
+        ACADEMIA IAG
+      </h1>
+      <div class="h-1 w-24 bg-[#00FF41] mx-auto mb-4 rounded-full"></div>
+      <h2 class="text-xl md:text-2xl font-light opacity-90">
+        Guía de Clasificación y Modelos de Inteligencia Artificial 2025
+      </h2>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN DE CATEGORÍAS -->
+  <nav class="max-w-6xl mx-auto mt-2 px-4">
+    <div class="bg-white rounded-2xl shadow-xl p-2 flex flex-wrap justify-center gap-2 border border-neutral-200">
+      <button onclick="mostrarSubcampo('fundamentos')" class="btn-tab flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all text-slate-600 hover:bg-neutral-100">
+        <i data-lucide="brain" class="w-5 h-5"></i> Fundamentos
+      </button>
+      <button onclick="mostrarSubcampo('practica')" class="btn-tab flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all text-slate-600 hover:bg-neutral-100">
+        <i data-lucide="message-square" class="w-5 h-5"></i> Práctica Prompts
+      </button>
+      <button onclick="mostrarSubcampo('motivos')" class="btn-tab flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all text-slate-600 hover:bg-neutral-100">
+        <i data-lucide="shield-check" class="w-5 h-5"></i> Motivos de Policía
+      </button>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 mt-8">
+    
+    <!-- SECCIÓN FUNDAMENTOS -->
+    <div id="fundamentos" class="subcampo active">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guía de Clasificación y Modelos de IA</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: #f8fafc;
+                color: #334155;
+            }
+            h1, h2, h3, h4 {
+                font-family: 'Outfit', sans-serif;
+            }
+            .header-bg {
+                background: linear-gradient(135deg, #86efac 0%, #34d399 100%);
+            }
+            .soft-green-bg {
+                background-color: #f0fdf4;
+            }
+            .card-shadow {
+                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            }
+            .icon-box {
+                background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            }
+        </style>
+      </head>
+      <body class="py-8 px-4">
+
+        <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-[2.5rem] overflow-hidden border border-gray-100">
+            
+            <!-- Header -->
+            <div class="header-bg p-8 md:p-12 text-center text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold tracking-wider mb-4 border border-white/30">
+                        EDICIÓN 2025
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-white drop-shadow-sm">
+                        Ecosistema de<br>Inteligencia Artificial
+                    </h1>
+                    <p class="text-lg opacity-95 max-w-2xl mx-auto font-light">
+                        Guía de clasificación, modelos de lenguaje (LLMs) y herramientas generativas líderes en el mercado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 1. Clasificación por Capacidad -->
+            <div class="p-6 md:p-10">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-6 text-center flex items-center justify-center gap-3">
+                    <i class="fas fa-layer-group"></i> 1. Clasificación por Capacidad
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- ANI -->
+                    <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 relative overflow-hidden">
+                        <i class="fas fa-robot absolute top-4 right-4 text-emerald-200 text-5xl opacity-50"></i>
+                        <h3 class="text-xl font-bold text-emerald-700 mb-2">IA Débil o Estrecha (ANI)</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold mb-4">Lo que usamos hoy</p>
+                        <p class="text-gray-600 mb-4">Diseñada para tareas específicas bajo reglas predefinidas. Sin conciencia.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-bold text-emerald-600 shadow-sm">Siri</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-bold text-emerald-600 shadow-sm">Alexa</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs font-bold text-emerald-600 shadow-sm">Recomendaciones</span>
+                        </div>
+                    </div>
+
+                    <!-- AGI / ASI -->
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 relative overflow-hidden">
+                        <i class="fas fa-brain absolute top-4 right-4 text-gray-200 text-5xl opacity-50"></i>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">IA General (AGI) y Super (ASI)</h3>
+                        <p class="text-sm text-gray-400 uppercase tracking-widest font-semibold mb-4">Futuro Teórico</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-bolt text-yellow-400 mt-1"></i>
+                                <span><strong>AGI:</strong> Igualaría la capacidad intelectual humana.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-rocket text-red-400 mt-1"></i>
+                                <span><strong>ASI:</strong> Superaría al ser humano en todo aspecto.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Modelos de Lenguaje (LLMs) -->
+            <div class="bg-gradient-to-b from-white to-emerald-50/50 p-6 md:p-10">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-4 text-center">
+                    <i class="fas fa-comments"></i> 2. Modelos de Lenguaje (LLM)
+                </h2>
+                <p class="text-center text-gray-500 mb-8 max-w-2xl mx-auto text-sm">
+                    Los gigantes del procesamiento de texto y razonamiento en 2025.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- ChatGPT-5 -->
+                    <div class="bg-white p-5 rounded-2xl card-shadow border-l-4 border-green-500">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">ChatGPT-5</h3>
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">OpenAI</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">La evolución multimodal definitiva. Versatilidad extrema.</p>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Multimodal real (Voz, Imagen, Texto).</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Integración con DALL·E 4 y Whisper.</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Ideal para redacción y programación.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Claude Sonnet 4 -->
+                    <div class="bg-white p-5 rounded-2xl card-shadow border-l-4 border-orange-400">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Claude Sonnet 4</h3>
+                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Anthropic</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">El más "humano" y ético. Enfoque en seguridad y razonamiento.</p>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>Ventana de contexto enorme (lee libros).</li>
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>Menos "alucinaciones" (errores).</li>
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>Tono natural y razonamiento lógico.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Gemini 2.5 -->
+                    <div class="bg-white p-5 rounded-2xl card-shadow border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Gemini 2.5 Pro</h3>
+                            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Google</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Nativo multimodal integrado en tu espacio de trabajo.</p>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Vive dentro de Docs, Gmail, Drive.</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Acceso a datos en tiempo real (Search).</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Análisis de video nativo (YouTube).</li>
+                        </ul>
+                    </div>
+
+                    <!-- LLaMA 4 -->
+                    <div class="bg-white p-5 rounded-2xl card-shadow border-l-4 border-purple-500">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">LLaMA 4</h3>
+                            <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Meta</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">El rey del Código Abierto (Open Source).</p>
+                        <ul class="text-sm space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Privacidad (ejecución local).</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Arquitectura "Mixture of Experts" (MoE).</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i>Ideal para desarrolladores e investigación.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Creatividad Visual y Video -->
+            <div class="p-6 md:p-10">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-6 text-center">
+                    <i class="fas fa-palette"></i> 3. Creatividad Visual y Video
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Midjourney -->
+                    <div class="bg-gray-900 text-white rounded-xl p-5 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        <h3 class="text-lg font-bold mb-2">Midjourney V7</h3>
+                        <p class="text-gray-400 text-sm mb-3">Calidad artística suprema.</p>
+                        <div class="text-xs text-gray-300 space-y-1">
+                            <p>• Fotorrealismo extremo</p>
+                            <p>• Fidelidad anatómica mejorada</p>
+                        </div>
+                    </div>
+
+                    <!-- DALL-E 4 -->
+                    <div class="bg-gray-800 text-white rounded-xl p-5 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        <h3 class="text-lg font-bold mb-2">DALL-E 4</h3>
+                        <p class="text-gray-400 text-sm mb-3">Precisión en instrucciones.</p>
+                        <div class="text-xs text-gray-300 space-y-1">
+                            <p>• Integrado en ChatGPT</p>
+                            <p>• Edición dentro del chat</p>
+                            <p>• Entiende textos complejos</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Generation -->
+                    <div class="bg-gray-800 text-white rounded-xl p-5 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        <h3 class="text-lg font-bold mb-2">Sora / Runway / Kling</h3>
+                        <p class="text-gray-400 text-sm mb-3">La revolución del video.</p>
+                        <div class="text-xs text-gray-300 space-y-1">
+                            <p>• Texto a Video hiperrealista</p>
+                            <p>• Coherencia física (Leyes físicas)</p>
+                            <p>• Escenas de hasta 1 minuto</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Creative Tools Grid Small -->
+                <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                        <span class="block font-bold text-emerald-700 text-sm">Adobe Firefly</span>
+                        <span class="text-xs text-gray-500">Integración Photoshop</span>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                        <span class="block font-bold text-emerald-700 text-sm">ElevenLabs v3</span>
+                        <span class="text-xs text-gray-500">Clonación de voz</span>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                        <span class="block font-bold text-emerald-700 text-sm">Canva AI</span>
+                        <span class="text-xs text-gray-500">Diseño para todos</span>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                        <span class="block font-bold text-emerald-700 text-sm">Runway Gen-4</span>
+                        <span class="text-xs text-gray-500">Edición de video pro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Productividad y Especializadas -->
+            <div class="soft-green-bg p-6 md:p-10">
+                <h2 class="text-2xl font-bold text-emerald-800 mb-6 text-center">
+                    <i class="fas fa-briefcase"></i> 4. Productividad y Especializadas
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Perplexity -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-teal-100 flex items-center justify-center text-teal-600"><i class="fas fa-search"></i></div>
+                            <h4 class="font-bold text-gray-800">Perplexity AI</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">MOTOR DE RESPUESTA</p>
+                        <p class="text-sm text-gray-600">Búsqueda con citas y fuentes verificadas. Ideal para investigación académica.</p>
+                    </div>
+
+                    <!-- Copilot -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-blue-100 flex items-center justify-center text-blue-600"><i class="fas fa-file-excel"></i></div>
+                            <h4 class="font-bold text-gray-800">Microsoft Copilot</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">OFICINA</p>
+                        <p class="text-sm text-gray-600">Integrado en Excel, Word y PowerPoint. Redacta correos y analiza datos.</p>
+                    </div>
+
+                    <!-- AlphaFold -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-purple-100 flex items-center justify-center text-purple-600"><i class="fas fa-dna"></i></div>
+                            <h4 class="font-bold text-gray-800">AlphaFold</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">CIENCIA</p>
+                        <p class="text-sm text-gray-600">Predice estructuras de proteínas. Revoluciona la medicina y biología.</p>
+                    </div>
+
+                    <!-- Cursor -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-gray-100 flex items-center justify-center text-gray-600"><i class="fas fa-code"></i></div>
+                            <h4 class="font-bold text-gray-800">Cursor</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">PROGRAMACIÓN</p>
+                        <p class="text-sm text-gray-600">Editor de código con IA. Escribe, refactoriza y depura software.</p>
+                    </div>
+
+                    <!-- Notion AI -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-zinc-100 flex items-center justify-center text-zinc-600"><i class="fas fa-sticky-note"></i></div>
+                            <h4 class="font-bold text-gray-800">Notion AI</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">ORGANIZACIÓN</p>
+                        <p class="text-sm text-gray-600">Ordena notas, genera resúmenes y planifica proyectos en un solo lugar.</p>
+                    </div>
+
+                    <!-- AudioPen -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-emerald-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded bg-orange-100 flex items-center justify-center text-orange-600"><i class="fas fa-microphone"></i></div>
+                            <h4 class="font-bold text-gray-800">AudioPen Pro</h4>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-2">TRANSCRIPCIÓN</p>
+                        <p class="text-sm text-gray-600">Convierte notas de voz desordenadas en texto claro y estructurado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Resumen de Funcionalidad (Table) -->
+            <div class="p-6 md:p-10">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 border-b pb-4">Niveles de Funcionalidad</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-emerald-50 text-emerald-800">
+                                <th class="p-4 rounded-tl-lg">Tipo</th>
+                                <th class="p-4 rounded-tr-lg">Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-gray-600">
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold">1. Reactiva</td>
+                                <td class="p-4">No tiene memoria. Solo responde al momento (Ej. Deep Blue).</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold">2. Memoria Limitada</td>
+                                <td class="p-4">Aprende de datos recientes para tomar decisiones (Ej. Coches autónomos).</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold">3. Teoría de la Mente</td>
+                                <td class="p-4 italic">En desarrollo. Entendería emociones humanas e intenciones.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold">4. Autoconsciente</td>
+                                <td class="p-4 italic">Ciencia ficción. La IA tendría conciencia de su propia existencia.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="bg-emerald-900 text-emerald-100 p-6 text-center">
+                <p class="text-sm opacity-70 mb-2">Información basada en el panorama tecnológico de 2025</p>
+                <p class="font-semibold tracking-widest text-xs uppercase">Generado con Inteligencia Artificial</p>
+            </div>
+
+        </div>
+
+      </body>
+    </div>
+
+    <!-- SECCIÓN PRÁCTICA PROMPTS -->
+    <div id="practica" class="subcampo space-y-6">
+      <div class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100">
+        <h3 class="text-2xl font-black text-[#006400] mb-4 uppercase">Primer paso: Contexto</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          Cuando hablamos de <strong>"Grandes Modelos de Lenguaje (LLM, Large Language Models)"</strong>, nos encontramos en el ámbito de la <strong>"Inteligencia Artificial Generativa (IAGen)"</strong>.
+        </p>
+        <ul class="space-y-3 text-slate-700">
+          <li><strong>La IAGen</strong> es un subcampo de la IA que se utiliza para crear contenido nuevo o modificar el existente (texto, imágenes, música, vídeos).</li>
+          <li><strong>Se basa</strong> en el <strong>"aprendizaje automático"</strong>, que identifica patrones en los datos y los utiliza para generar nuevo contenido.</li>
+          <li><strong>Estos sistemas</strong> aprenden patrones a partir de datos de entrenamiento y generan predicciones y resultados mediante criterios probabilísticos.</li>
+        </ul>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          La <strong>"IA tradicional"</strong> abarca sistemas capaces de realizar tareas que antes requerían inteligencia humana: percepción, razonamiento lógico, toma de decisiones y comprensión del lenguaje natural.
+        </p>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          De ella surge el <strong>"aprendizaje automático (machine learning)"</strong>, que desarrolla algoritmos para hacer predicciones o tomar decisiones basadas en grandes volúmenes de datos, sin estar programados explícitamente.
+        </p>
+        <p class="mt-4 text-slate-700 leading-relaxed italic">
+          <em>Ejemplo:</em> No se entrena al modelo para responder "4" por defecto a la pregunta "¿Cuántas patas tiene un perro?", sino para identificar que, según los patrones de datos, lo lógico es responder "4". Si los datos cambian, también lo hará la predicción, aunque no sea correcta en el mundo real.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200">
+        <h3 class="text-2xl font-black text-[#006400] mb-4 uppercase">Segundo paso: Conocer y usar los prompts</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          En el contexto de la IAGen, un <strong>"prompt"</strong> es una instrucción o estímulo dado a un sistema de IA para generar una respuesta coherente.
+        </p>
+        <ul class="space-y-3 text-slate-700">
+          <li><strong>Es</strong> el punto de partida que condiciona la salida del modelo.</li>
+          <li><strong>La redacción</strong> de prompts precisos, completos y adecuados al objetivo es esencial para obtener resultados óptimos.</li>
+          <li><strong>Prompting</strong> es el uso eficiente del lenguaje natural para explicar lo que buscamos y obtener una respuesta pertinente.</li>
+        </ul>
+        <p class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-slate-700">
+          <strong>Importante:</strong> Los LLM pueden producir respuestas erróneas, falsas o sesgadas, ya que generan asociaciones probabilísticas de palabras basadas en patrones aprendidos. El modelo no "sabe" ni "entiende", simplemente <strong>predice</strong>.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200">
+        <h3 class="text-2xl font-black text-[#006400] mb-4 uppercase">Tercer paso: Componentes esenciales de un prompt</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+            <h4 class="font-black text-xl text-[#006400] mb-3">1. Instrucción</h4>
+            <p class="text-slate-700">Declaración imperativa que indica al modelo qué hacer. Debe ser clara y directa.</p>
+          </div>
+          <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+            <h4 class="font-black text-xl text-[#006400] mb-3">2. Contexto</h4>
+            <p class="text-slate-700">Detalles descriptivos del entorno o del objetivo que guían la respuesta en la dirección correcta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#006400] p-8 rounded-3xl text-white">
+        <h3 class="text-2xl font-black mb-4 uppercase">Cuarto paso: Componentes útiles adicionales</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white/10 p-4 rounded-xl">
+            <h4 class="font-bold text-[#00FF41] mb-2">Formato de respuesta</h4>
+            <p class="text-sm text-slate-200">Especificaciones estructurales como tablas, listas, cuadros comparativos, extensión mínima/máxima, ejemplos.</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-xl">
+            <h4 class="font-bold text-[#00FF41] mb-2">Tono deseado</h4>
+            <p class="text-sm text-slate-200">Formal/informal, técnico, con analogías, humorístico, informativo. Puede adaptarse al rol (estudiante, profesor, investigador, abogado).</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-xl">
+            <h4 class="font-bold text-[#00FF41] mb-2">Audiencia</h4>
+            <p class="text-sm text-slate-200">Descripción del público objetivo: nivel de conocimiento, edad, contexto.</p>
+          </div>
+          <div class="bg-white/10 p-4 rounded-xl">
+            <h4 class="font-bold text-[#00FF41] mb-2">Señales (cues)</h4>
+            <p class="text-sm text-slate-200">Frases disparadoras que orientan la salida o hacen que el texto generado inicie con una frase específica.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200">
+        <h3 class="text-xl font-bold mb-6 text-[#006400]">Conclusiones</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          Al combinar <strong>instrucciones</strong>, <strong>contexto</strong>, <strong>ejemplos</strong>, <strong>preferencias de formato</strong> y <strong>tono</strong>, información sobre la <strong>audiencia</strong> y <strong>disparadores</strong>, se obtiene una <strong>gran variedad de combinaciones posibles</strong> para diseñar prompts más precisos y efectivos.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl shadow-lg border border-neutral-200">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <i data-lucide="lightbulb" class="text-[#006400]"></i> Estrategias de Prompt Engineering
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-emerald-600 mb-2">A. System Message</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Define rol, tono y reglas del modelo.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Controlar estilo y consistencia.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-blue-600 mb-2">B. Zero-shot Prompting</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Tarea sin ejemplos previos.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Respuestas rápidas sin referencia.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-purple-600 mb-2">C. One-shot Prompting</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Se da un solo ejemplo.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Aclarar formato esperado.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-orange-600 mb-2">D. Few-shot Prompting</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Varios ejemplos en el prompt.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Mejorar precisión en tareas complejas.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-red-600 mb-2">E. Break the Task Down</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Descomponer tareas grandes.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Resolver paso a paso.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-teal-600 mb-2">F. Chain of Thought</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Razonamiento intermedio paso a paso.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Resolver problemas lógicos/matemáticos.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-indigo-600 mb-2">G. Conocimiento Integrado</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Combina IA con fuentes externas.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Reducir errores y mejorar precisión.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-pink-600 mb-2">H. Skeleton-of-Thought</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Genera esquema antes de expandir.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Mantener estructura clara.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-cyan-600 mb-2">I. Super-prompt</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Prompt detallado con contexto y ejemplos.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Resultados consistentes y de calidad.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-lime-600 mb-2">J. TAM</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Tarea, Acción y Meta.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Claridad y enfoque en objetivos.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-amber-600 mb-2">K. ADP</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Antes, Después y Puente.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Narrativas persuasivas.</p>
+          </div>
+          <div class="bg-neutral-50 p-4 rounded-xl border border-neutral-200">
+            <h4 class="font-bold text-violet-600 mb-2">L. CARE</h4>
+            <p class="text-xs text-slate-600"><strong>Qué es:</strong> Contexto, Acción, Resultado y Ejemplo.</p>
+            <p class="text-xs text-slate-600 mt-1"><strong>Sirve para:</strong> Prompts detallados y aplicables.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200">
+        <h3 class="text-xl font-bold mb-4 text-[#006400]">Práctica de Prompts</h3>
+        <textarea id="userPrompt" class="w-full h-32 p-4 border-2 border-emerald-500 rounded-xl mb-4" placeholder="Escribe aquí tu prompt..."></textarea>
+        <button onclick="analizarPrompt()" class="bg-[#006400] text-white px-6 py-3 rounded-full font-bold hover:bg-[#00FF41] hover:text-[#006400] transition-colors">
+          Analizar y Corregir
+        </button>
+        <div id="outputPrompt" class="output mt-4 p-4 border-2 border-dashed border-[#006400] rounded-xl bg-white whitespace-pre-wrap text-sm leading-relaxed font-mono">
+          Aquí aparecerá el análisis del prompt.
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN MOTIVOS DE POLICÍA -->
+    <div id="motivos" class="subcampo space-y-6">
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200">
+        <h3 class="text-2xl font-black text-[#006400] mb-4 uppercase">Motivos de Policía</h3>
+        <ul class="space-y-4 text-slate-700">
+          <li class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Se refiere</strong> a la razón legal o normativa que justifica la intervención de la policía.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Está ligado</strong> al poder de policía, que es la facultad del Estado para regular y limitar ciertas libertades individuales con el fin de preservar el orden público, la seguridad, la tranquilidad y la salubridad.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>En términos prácticos</strong>, el motivo de policía es la causa legítima por la cual un agente puede actuar: por ejemplo, controlar el ruido excesivo, intervenir en una riña, verificar documentos en un operativo, entre otros.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100">
+        <h3 class="text-2xl font-black text-[#006400] mb-4 uppercase">Informe de Policía</h3>
+        <ul class="space-y-4 text-slate-700">
+          <li class="flex items-start gap-3">
+            <i data-lucide="file-text" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Es</strong> un documento oficial y público elaborado por un funcionario de policía.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="file-text" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Sirve</strong> para informar a sus superiores o a la autoridad competente sobre hechos ocurridos durante el servicio.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="file-text" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Debe responder</strong> a las preguntas básicas: ¿Qué pasó?, ¿Quiénes estuvieron involucrados?, ¿Cómo ocurrió?, ¿Cuándo?, ¿Dónde? y ¿Por qué?</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="file-text" class="w-5 h-5 text-[#006400] mt-1 shrink-0"></i>
+            <span><strong>Incluye</strong> detalles claros, precisos y verificables sobre los hechos, los elementos encontrados, las medidas adoptadas y cualquier otra circunstancia relevante.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl shadow-lg border border-neutral-200">
+        <h3 class="text-xl font-bold mb-4 text-[#006400]">Analizador de Informes Policiales</h3>
+        <p class="text-sm text-slate-500 mb-4">Selecciona el tipo de delito y escribe tu informe. El sistema analizará estructura, contenido, normatividad y completitud basándose en los estándares policiales colombianos.</p>
+        <div class="mb-4">
+          <label for="tipoDelito" class="block text-sm font-bold text-slate-700 mb-2">Tipo de delito:</label>
+          <select id="tipoDelito" class="w-full p-3 border-2 border-emerald-500 rounded-xl bg-white text-slate-700 font-medium">
+            <option value="auto">🔍 Detectar automáticamente</option>
+            <option value="violencia intrafamiliar">Violencia Intrafamiliar</option>
+            <option value="hurto">Hurto</option>
+            <option value="riñas">Riñas / Lesiones Personales</option>
+            <option value="homicidio">Homicidio</option>
+            <option value="delitos electorales">Delitos Electorales</option>
+          </select>
+        </div>
+        <textarea id="userInforme" class="w-full h-48 p-4 border-2 border-emerald-500 rounded-xl mb-4 text-sm" placeholder="Escribe aquí tu informe de policía. Incluye fecha, hora, lugar, personas involucradas, hechos, normatividad aplicable y medidas tomadas..."></textarea>
+        <button onclick="analizarInforme()" class="bg-[#006400] text-white px-6 py-3 rounded-full font-bold hover:bg-[#00FF41] hover:text-[#006400] transition-colors">
+          🔍 Analizar y Corregir
+        </button>
+        <div id="outputInforme" class="output mt-4 p-4 border-2 border-dashed border-[#006400] rounded-xl bg-white whitespace-pre-wrap text-sm leading-relaxed">
+          Aquí aparecerá el análisis detallado del informe.
+        </div>
+      </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="mt-12 flex flex-col items-center gap-6">
+      <div class="bg-neutral-100 p-6 rounded-2xl flex items-center gap-4 max-w-2xl border border-neutral-200">
+        <i data-lucide="info" class="w-8 h-8 text-[#006400] shrink-0"></i>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          La IA no es una sola entidad, sino un ecosistema. Esta guía recopila los modelos más relevantes de 2025 para ayudarte a elegir la herramienta adecuada según tus necesidades profesionales o creativas.
+        </p>
+      </div>
+      <div class="text-[#006400] font-black tracking-widest text-lg uppercase">
+        Academia IAG • Innovación & Inteligencia
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Inicializar iconos de Lucide
+    lucide.createIcons();
+
+    // Función para mostrar subcampos
+    function mostrarSubcampo(subcampoId) {
+      // Ocultar todos los subcampos
+      document.querySelectorAll('.subcampo').forEach(subcampo => {
+        subcampo.classList.remove('active');
+      });
+      // Mostrar el subcampo seleccionado
+      const subcampo = document.getElementById(subcampoId);
+      if (subcampo) {
+        subcampo.classList.add('active');
+      }
+    }
+
+    // ==========================================
+    // DATOS DE PROMPTS - Versión completa integrada
+    // ==========================================
+    let promptsData = {
+      "informacion_educativa": {
+        "que_es_llm": "Los Grandes Modelos de Lenguaje (LLM) son sistemas de IA Generativa que crean contenido nuevo basándose en patrones identificados en los datos de entrenamiento.",
+        "que_es_prompt": "Un prompt es una instrucción o estímulo dado a un sistema de IA para generar una respuesta coherente. Es el punto de partida que condiciona la salida del modelo.",
+        "que_es_prompting": "El prompting es el uso eficiente del lenguaje natural para explicar lo que buscamos y obtener una respuesta pertinente.",
+        "importante_limitacion": "Los LLM pueden producir respuestas erróneas, falsas o sesgadas, ya que generan asociaciones probabilísticas de palabras basadas en patrones aprendidos. El modelo no 'sabe' ni 'entiende', simplemente predice.",
+        "por_que_importa": "Un prompt bien redactado puede marcar la diferencia entre una respuesta mediocre y una excelente. La IA no puede adivinar lo que quieres si no se lo explicas claramente."
+      },
+      "componentes_esenciales": {
+        "instruccion": {
+          "definicion": "La instrucción es el núcleo del prompt. Es una declaración imperativa que indica al modelo qué acción específica quieres realizar.",
+          "caracteristicas": "Debe ser clara, directa, específica y orientada a la acción.",
+          "ejemplos": ["Genera", "Redacta", "Analiza", "Crea", "Resume", "Explica", "Traduce", "Compara", "Evalúa", "Desarrolla"]
+        },
+        "contexto": {
+          "definicion": "El contexto proporciona el marco de referencia necesario para que la IA entienda la situación específica.",
+          "caracteristicas": "Proporciona el marco de referencia necesario para entender la situación.",
+          "elementos": ["Lugar", "Tiempo", "Situación", "Personas involucradas", "Circunstancias", "Antecedentes"]
+        }
+      },
+      "componentes_adicionales": {
+        "rol": {
+          "definicion": "El rol define el personaje, profesión o perspectiva específica desde la cual la IA debe responder.",
+          "ejemplos": ["Abogado", "Médico", "Profesor", "Periodista", "Programador", "Analista", "Chef", "Psicólogo"]
+        },
+        "formato_respuesta": {
+          "definicion": "El formato especifica cómo debe estructurarse la salida deseada.",
+          "opciones": ["Tablas", "Listas", "Párrafos", "JSON", "Código", "Poema", "Carta", "Informe", "Esquema"]
+        },
+        "tono_deseado": {
+          "definicion": "El tono define el estilo de comunicación a utilizar.",
+          "opciones": ["Formal", "Informal", "Técnico", "Académico", "Humorístico", "Persuasivo", "Didáctico"]
+        },
+        "audiencia": {
+          "definicion": "La audiencia define quién recibirá la respuesta final.",
+          "elementos": ["Nivel de conocimiento", "Edad", "Contexto educativo", "Profesión"]
+        }
+      },
+      "estrategias_prompting": [
+        {"id": "A", "nombre": "System Message", "descripcion": "Mensaje inicial que define rol, tono y reglas del modelo.", "cuando_usar": "Controlar estilo, consistencia y seguridad.", "dificultad": "Baja"},
+        {"id": "B", "nombre": "Zero-shot", "descripcion": "Se pide una tarea sin ejemplos previos.", "cuando_usar": "Respuestas rápidas.", "dificultad": "Baja"},
+        {"id": "C", "nombre": "One-shot", "descripcion": "Se da un solo ejemplo de entrada-salida.", "cuando_usar": "Aclarar formato esperado.", "dificultad": "Media"},
+        {"id": "D", "nombre": "Few-shot", "descripcion": "Se incluyen varios ejemplos.", "cuando_usar": "Mejorar precisión.", "dificultad": "Media"},
+        {"id": "E", "nombre": "Break the Task", "descripcion": "Descomponer tareas grandes en subtareas.", "cuando_usar": "Resolver paso a paso.", "dificultad": "Media"},
+        {"id": "F", "nombre": "Chain of Thought", "descripcion": "Guía al modelo con razonamiento paso a paso.", "cuando_usar": "Problemas lógicos.", "dificultad": "Media-Alta"},
+        {"id": "G", "nombre": "Conocimiento Integrado", "descripcion": "Combina con fuentes externas.", "cuando_usar": "Reducir errores.", "dificultad": "Media"},
+        {"id": "H", "nombre": "Skeleton-of-Thought", "descripcion": "Genera esquema antes de expandir.", "cuando_usar": "Estructura clara.", "dificultad": "Media"},
+        {"id": "I", "nombre": "Super-prompt", "descripcion": "Prompt muy detallado.", "cuando_usar": "Resultados de calidad.", "dificultad": "Alta"},
+        {"id": "J", "nombre": "TAM", "descripcion": "Tarea, Acción y Meta.", "cuando_usar": "Objetivos claros.", "dificultad": "Baja"}
+      ],
+      "palabras_a_evitar": [
+        {"palabra": "algo", "alternativa": "informe, análisis, resumen"},
+        {"palabra": "cosas", "alternativa": "elementos, aspectos, detalles"},
+        {"palabra": "mejor", "alternativa": "más detallado, más claro"},
+        {"palabra": "interesante", "alternativa": "relevante, útil"},
+        {"palabra": "bien", "alternativa": "correctamente, con precisión"},
+        {"palabra": "mucho", "alternativa": "detalladamente"}
+      ],
+      "consejos_practicos": [
+        "Cuanto más específico seas, mejores resultados obtendrás",
+        "Si no obtienes lo que quieres, reformula el prompt con más detalles",
+        "Usa ejemplos cuando quieras un formato específico",
+        "Define el rol al inicio para establecer el contexto",
+        "Separa las instrucciones con números para mayor claridad",
+        "Para tareas complejas, usa pensamiento encadenado",
+        "Itera: el primer resultado a menudo necesita refinamiento",
+        "La IA no puede adivinar detalles que no proporcionas",
+        "Un objetivo claro guía toda la respuesta",
+        "El contexto proporciona información de fondo necesaria"
+      ]
+    };
+    
+    // Función para cargar datos extendidos desde JSON (opcional)
+    async function cargarPromptsData() {
+      try {
+        const response = await fetch('prompts_info.json');
+        if (response.ok) {
+          const data = await response.json();
+          // Combinar datos básicos con datos extendidos
+          promptsData = { ...promptsData, ...data };
+          console.log('Datos extendidos de prompts cargados');
+        }
+      } catch (error) {
+        console.log('Usando datos integrados');
+      }
+    }
+    
+    // Cargar datos extendidos al inicio (sin await para no bloquear)
+    cargarPromptsData().catch(err => console.log('Error al cargar datos:', err));
+
+    // Función para analizar prompts mejorada
+    async function analizarPrompt() {
+      try {
+        const promptInput = document.getElementById("userPrompt");
+        if (!promptInput) {
+          console.error('No se encontró el elemento userPrompt');
+          return;
+        }
+        const prompt = promptInput.value.trim();
+        let resultado = "";
+
+        // Esperar a que carguen los datos
+        if (!promptsData) {
+          await cargarPromptsData();
+        }
+
+        if (prompt === "") {
+          resultado = "📝 **ANÁLISIS DE PROMPT**\n\n⚠️ Por favor escribe un prompt para analizar.";
+          document.getElementById("outputPrompt").innerHTML = resultado;
+          return;
+        }
+
+        // Análisis de componentes
+        const analisisComponentes = await analizarComponentes(prompt);
+        const analisisCalidad = analizarCalidad(prompt);
+        const palabrasProhibidas = await buscarPalabrasProhibidas(prompt);
+        const estrategiasSugeridas = await sugerirEstrategias(prompt);
+
+      // Construir resultado
+      resultado = `📝 **ANÁLISIS DETALLADO DE TU PROMPT**\n\n`;
+      resultado += `─`.repeat(40) + `\n\n`;
+      
+      // Puntuación general
+      const puntuacion = Math.round((analisisComponentes.puntuacion + analisisCalidad.puntuacion) / 2);
+      
+      // Determinar nivel de aprendizaje
+      let nivel = "Principiante";
+      if (puntuacion >= 95) nivel = "Experto";
+      else if (puntuacion >= 80) nivel = "Avanzado";
+      else if (puntuacion >= 60) nivel = "Intermedio";
+      
+      resultado += `📊 **PUNTUACIÓN GENERAL: ${puntuacion}/100**\n`;
+      resultado += `🎓 **Nivel de habilidad: ${nivel}**\n\n`;
+      
+      // Explicación educativa breve
+      resultado += `💡 **¿Qué es un Prompt?**\n`;
+      resultado += `Un prompt es la instrucción que le das a la IA para que genere una respuesta. ` + (promptsData.informacion_educativa?.que_es_prompt || "Es el punto de partida que condiciona la salida del modelo.") + `\n\n`;
+      resultado += `⚠️ **Importante:** ` + (promptsData.informacion_educativa?.importante_limitacion || "Los LLM pueden generar información errónea ya que predicen basándose en probabilidades.") + `\n\n`;
+
+      // Análisis de componentes con explicaciones educativas
+      resultado += `🔍 **📖 ANÁLISIS DE COMPONENTES (Aprende qué incluir)**\n\n`;
+      resultado += `Estos son los elementos esenciales que todo buen prompt debe tener:\n\n`;
+      
+      // Instruccion
+      resultado += `1️⃣ **INSTRUCCIÓN** ${analisisComponentes.instruccion.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.instruccion.estado}\n`;
+      resultado += `   ¿Qué es? ${promptsData.componentes_esenciales.instruccion.definicion}\n`;
+      if (analisisComponentes.instruccion.faltante) {
+        resultado += `   ✨ Mejora: Usa verbos como: ${promptsData.componentes_esenciales.instruccion.ejemplos.join(", ")}\n`;
+      }
+      resultado += `\n`;
+      
+      // Contexto
+      resultado += `2️⃣ **CONTEXTO** ${analisisComponentes.contexto.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.contexto.estado}\n`;
+      resultado += `   ¿Qué es? ${promptsData.componentes_esenciales.contexto.definicion}\n`;
+      if (analisisComponentes.contexto.faltante) {
+        resultado += `   ✨ Mejora: Añade: ${promptsData.componentes_esenciales.contexto.elementos.join(", ")}\n`;
+      }
+      resultado += `\n`;
+      
+      // Rol
+      resultado += `3️⃣ **ROL** ${analisisComponentes.rol.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.rol.estado}\n`;
+      resultado += `   ¿Qué es? Define el personaje desde el cual la IA responde.\n`;
+      if (analisisComponentes.rol.faltante) {
+        resultado += `   ✨ Mejora: "Actúa como...", "Eres..."\n`;
+      }
+      resultado += `\n`;
+      
+      // Formato
+      resultado += `4️⃣ **FORMATO** ${analisisComponentes.formato.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.formato.estado}\n`;
+      resultado += `   ¿Qué es? Cómo debe estructurarse la respuesta.\n`;
+      if (analisisComponentes.formato.faltante) {
+        resultado += `   ✨ Mejora: Indica formato como: tabla, lista, json, etc.\n`;
+      }
+      resultado += `\n`;
+      
+      // Tono
+      resultado += `5️⃣ **TONO** ${analisisComponentes.tono.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.tono.estado}\n`;
+      resultado += `   ¿Qué es? El estilo de comunicación.\n`;
+      if (analisisComponentes.tono.faltante) {
+        resultado += `   ✨ Mejora: Formal, informal, técnico, académico...\n`;
+      }
+      resultado += `\n`;
+      
+      // Audiencia
+      resultado += `6️⃣ **AUDIENCIA** ${analisisComponentes.audiencia.icono}\n`;
+      resultado += `   Estado: ${analisisComponentes.audiencia.estado}\n`;
+      resultado += `   ¿Qué es? Para quién es la respuesta.\n`;
+      if (analisisComponentes.audiencia.faltante) {
+        resultado += `   ✨ Mejora: "para estudiantes...", "dirigido a expertos..."\n`;
+      }
+      resultado += `\n`;
+
+      // Análisis de calidad
+      resultado += `─`.repeat(40) + `\n\n`;
+      resultado += `✨ **ANÁLISIS DE CALIDAD**\n\n`;
+      resultado += `• Longitud: ${analisisCalidad.longitud.texto} (${prompt.length} caracteres)\n`;
+      resultado += `• Claridad: ${analisisCalidad.claridad.texto}\n`;
+      resultado += `• Nivel de detalle: ${analisisCalidad.detalle.texto}\n\n`;
+
+      // Palabras a evitar
+      if (palabrasProhibidas.length > 0) {
+        resultado += `─`.repeat(40) + `\n\n`;
+        resultado += `⚠️ **PALABRAS A EVITAR**\n\n`;
+        resultado += `Las siguientes palabras son demasiado genéricas:\n`;
+        palabrasProhibidas.forEach(p => {
+          resultado += `• "${p.palabra}" → ${p.alternativa}\n`;
+        });
+        resultado += `\n`;
+      }
+
+      // Mejoras sugeridas con guía educativa
+      resultado += `─`.repeat(45) + `\n\n`;
+      resultado += `💡 **📝 GUÍA PARA MEJORAR TU PROMPT**\n\n`;
+      resultado += `Aprende qué debe incluir tu prompt para obtener mejores resultados:\n\n`;
+      
+      if (analisisComponentes.instruccion.faltante) {
+        resultado += `1. **Añade una instrucción clara:**\n`;
+        resultado += `   Usa palabras como: ${promptsData.componentes_esenciales.instruccion.ejemplos.join(", ")}\n`;
+        resultado += `   Ejemplo: "Redacta un informe sobre...", "Analiza los datos..."\n\n`;
+      }
+      if (analisisComponentes.contexto.faltante) {
+        resultado += `2. **Incluye contexto relevante:**\n`;
+        resultado += `   Añade detalles sobre lugar, tiempo, situación o circunstancias.\n`;
+        resultado += `   Ejemplo: "...ocurrido en Bogotá", "...durante la noche"\n\n`;
+      }
+      if (analisisComponentes.rol.faltante) {
+        resultado += `3. **Define un rol para la IA:**\n`;
+        resultado += `   Roles sugeridos: ${promptsData.componentes_adicionales.rol.ejemplos.join(", ")}\n`;
+        resultado += `   Ejemplo: "Actúa como un abogado...", "Eres un profesor..."\n\n`;
+      }
+      if (analisisComponentes.formato.faltante) {
+        resultado += `4. **Especifica el formato de respuesta:**\n`;
+        resultado += `   Formatos: ${promptsData.componentes_adicionales.formato_respuesta.opciones.join(", ")}\n`;
+        resultado += `   Ejemplo: "...en formato de tabla", "...como lista numerada"\n\n`;
+      }
+      if (analisisComponentes.tono.faltante) {
+        resultado += `5. **Define el tono deseado:**\n`;
+        resultado += `   Tonos: ${promptsData.componentes_adicionales.tono_deseado.opciones.join(", ")}\n`;
+        resultado += `   Ejemplo: "Usa un tono formal...", "...en estilo académico"\n\n`;
+      }
+      if (analisisComponentes.audiencia.faltante) {
+        resultado += `6. **Considera la audiencia:**\n`;
+        resultado += `   Especifica para quién es la respuesta.\n`;
+        resultado += `   Ejemplo: "...para estudiantes", "...dirigido a especialistas"\n\n`;
+      }
+
+      // Estrategias sugeridas con más contexto educativo
+      if (estrategiasSugeridas.length > 0) {
+        resultado += `─`.repeat(45) + `\n\n`;
+        resultado += `🎯 **🚀 ESTRATEGIAS DE PROMPTING AVANZADO**\n\n`;
+        resultado += `Estas técnicas te ayudan a obtener mejores resultados de la IA:\n\n`;
+        estrategiasSugeridas.forEach(estrategia => {
+          resultado += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+          resultado += `📌 **${estrategia.nombre}**\n`;
+          resultado += `   Dificultad: ${estrategia.dificultad}\n`;
+          resultado += `   ¿Qué es? ${estrategia.descripcion}\n`;
+          resultado += `   💡 Úsala cuando: ${estrategia.cuando_usar}\n\n`;
+        });
+      }
+
+      // Ejemplo mejorado
+      resultado += `─`.repeat(40) + `\n\n`;
+      resultado += `✅ **EJEMPLO DE PROMPT MEJORADO**\n\n`;
+      resultado += generarPromptMejorado(prompt, analisisComponentes);
+
+      // Consejos prácticos mejorados
+      resultado += `\n${`═`.repeat(45)}\n\n`;
+      resultado += `💪 **🎓 CONSEJOS PARA APRENDER PROMPTING**\n\n`;
+      resultado += `Sigue estos consejos para mejorar tus habilidades:\n\n`;
+      
+      // Mostrar solo los primeros 7 consejos relevantes
+      const consejos = promptsData.consejos_practicos || [
+        "Cuanto más específico seas, mejores resultados obtendrás",
+        "Si no obtienes lo que quieres, reformula el prompt",
+        "Usa ejemplos cuando quieras un formato específico",
+        "Define el rol al inicio para establecer el contexto",
+        "Separa las instrucciones con números para mayor claridad",
+        "Para tareas complejas, usa pensamiento encadenado",
+        "Itera: el primer resultado a menudo necesita refinamiento"
+      ];
+      
+      consejos.slice(0, 7).forEach((consejo, i) => {
+        resultado += `✅ ${consejo}\n\n`;
+      });
+      
+      // Añadir sección de aprendizaje
+      resultado += `═`.repeat(45) + `\n\n`;
+      resultado += `📚 **¿CÓMO MEJORAR?**\n\n`;
+      resultado += `1. **Practica** escribiendo prompts todos los días\n`;
+      resultado += `2. **Analiza** qué funcionan bien y qué no\n`;
+      resultado += `3. **Itera** - refine tus prompts basándose en los resultados\n`;
+      resultado += `4. **Estudia** los ejemplos buenos y malos\n`;
+      resultado += `5. **Aprende** las estrategias avanzadas de prompting\n`;
+
+      document.getElementById("outputPrompt").innerHTML = resultado;
+      } catch (error) {
+        console.error('Error al analizar el prompt:', error);
+        document.getElementById("outputPrompt").innerHTML = "❌ Error al analizar el prompt. Por favor intenta de nuevo.";
+      }
+    }
+
+    // Función para analizar componentes
+    async function analizarComponentes(prompt) {
+      if (!promptsData) await cargarPromptsData();
+      const lowerPrompt = prompt.toLowerCase();
+      let puntuacion = 0;
+      let total = 6;
+
+      // Verificar instrucción
+      const palabrasInstruccion = (promptsData.componentes_esenciales.instruccion.ejemplos || []).map(p => p.toLowerCase());
+      const tieneInstruccion = palabrasInstruccion.some(p => lowerPrompt.includes(p.toLowerCase()));
+      const instruccion = {
+        estado: tieneInstruccion ? "Presente" : "Faltante",
+        icono: tieneInstruccion ? "✅" : "❌",
+        faltante: !tieneInstruccion
+      };
+      if (tieneInstruccion) puntuacion += 17;
+
+      // Verificar contexto
+      const indicadoresContexto = ["en", "durante", "cuando", "donde", "lugar", "ciudad", "barrio", "fecha", "hora"];
+      const tieneContexto = indicadoresContexto.some(p => lowerPrompt.includes(p));
+      const contexto = {
+        estado: tieneContexto ? "Presente" : "Faltante",
+        icono: tieneContexto ? "✅" : "❌",
+        faltante: !tieneContexto
+      };
+      if (tieneContexto) puntuacion += 17;
+
+      // Verificar rol
+      const palabrasRol = ["actúa como", "eres", "como si", "ponte en", "tu rol es", "role", "扮演"];
+      const tieneRol = palabrasRol.some(p => lowerPrompt.includes(p));
+      const rol = {
+        estado: tieneRol ? "Presente" : "Faltante",
+        icono: tieneRol ? "✅" : "❌",
+        faltante: !tieneRol
+      };
+      if (tieneRol) puntuacion += 17;
+
+      // Verificar formato
+      const palabrasFormato = ["formato", "como", "estructura", "tabla", "lista", "párrafo", "json", "código", "en forma de"];
+      const tieneFormato = palabrasFormato.some(p => lowerPrompt.includes(p));
+      const formato = {
+        estado: tieneFormato ? "Presente" : "Faltante",
+        icono: tieneFormato ? "✅" : "ℹ️",
+        faltante: !tieneFormato
+      };
+      if (tieneFormato) puntuacion += 17;
+
+      // Verificar tono
+      const palabrasTono = ["tono", "formal", "informal", "técnico", "académico", "humorístico", "serio", "amigable"];
+      const tieneTono = palabrasTono.some(p => lowerPrompt.includes(p));
+      const tono = {
+        estado: tieneTono ? "Presente" : "Faltante",
+        icono: tieneTono ? "✅" : "ℹ️",
+        faltante: !tieneTono
+      };
+      if (tieneTono) puntuacion += 16;
+
+      // Verificar audiencia
+      const palabrasAudiencia = ["para", "destinado", "dirigido", "audiencia", "público", "para un", "para una"];
+      const tieneAudiencia = palabrasAudiencia.some(p => lowerPrompt.includes(p));
+      const audiencia = {
+        estado: tieneAudiencia ? "Presente" : "Faltante",
+        icono: tieneAudiencia ? "✅" : "ℹ️",
+        faltante: !tieneAudiencia
+      };
+      if (tieneAudiencia) puntuacion += 16;
+
+      return {
+        puntuacion,
+        instruccion,
+        contexto,
+        rol,
+        formato,
+        tono,
+        audiencia
+      };
+    }
+
+    // Función para analizar calidad
+    function analizarCalidad(prompt) {
+      let puntuacion = 50;
+      const longitud = prompt.length;
+      const palabras = prompt.split(/\s+/).filter(p => p.length > 0);
+      const numPalabras = palabras.length;
+
+      // Análisis de longitud
+      let longitudTexto = "⚠️ Muy corto";
+      if (longitud < 20) {
+        puntuacion -= 30;
+      } else if (longitud < 50) {
+        longitudTexto = "⚠️ Corto";
+        puntuacion -= 15;
+      } else if (longitud < 150) {
+        longitudTexto = "✅ Adecuado";
+        puntuacion += 15;
+      } else if (longitud < 500) {
+        longitudTexto = "✅ Bueno";
+        puntuacion += 25;
+      } else {
+        longitudTexto = "ℹ️ Extenso";
+        puntuacion += 10;
+      }
+
+      // Análisis de palabras
+      let claridadTexto = "❌ Muy vaga";
+      if (numPalabras < 3) {
+        puntuacion -= 25;
+      } else if (numPalabras < 8) {
+        claridadTexto = "⚠️ Poca claridad";
+        puntuacion -= 10;
+      } else if (numPalabras < 20) {
+        claridadTexto = "✅ Medianamente claro";
+        puntuacion += 10;
+      } else {
+        claridadTexto = "✅ Muy claro";
+        puntuacion += 20;
+      }
+
+      // Nivel de detalle
+      let detalleTexto = "❌ Falta detalle";
+      if (numPalabras < 10) {
+        puntuacion -= 15;
+      } else if (numPalabras < 25) {
+        detalleTexto = "⚠️ Básico";
+        puntuacion += 5;
+      } else if (numPalabras < 50) {
+        detalleTexto = "✅ Bueno";
+        puntuacion += 15;
+      } else {
+        detalleTexto = "✅ Excelente";
+        puntuacion += 20;
+      }
+
+      // Limitar puntuación
+      puntuacion = Math.max(0, Math.min(100, puntuacion));
+
+      return {
+        puntuacion,
+        longitud: { texto: longitudTexto, valor: longitud },
+        claridad: { texto: claridadTexto, valor: numPalabras },
+        detalle: { texto: detalleTexto }
+      };
+    }
+
+    // Función para buscar palabras prohibidas
+    async function buscarPalabrasProhibidas(prompt) {
+      if (!promptsData) await cargarPromptsData();
+      const lowerPrompt = prompt.toLowerCase();
+      const encontradas = [];
+      promptsData.palabras_a_evitar.forEach(p => {
+        const regex = new RegExp(`\\b${p.palabra}\\b`, 'gi');
+        if (regex.test(lowerPrompt)) {
+          encontradas.push(p);
+        }
+      });
+      return encontradas;
+    }
+
+    // Función para sugerir estrategias
+    async function sugerirEstrategias(prompt) {
+      if (!promptsData) await cargarPromptsData();
+      const lowerPrompt = prompt.toLowerCase();
+      const sugeridas = [];
+
+      // Analizar el prompt para sugerir estrategias
+      if (lowerPrompt.length < 30) {
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "I")); // Super-prompt
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "J")); // TAM
+      }
+      if (!lowerPrompt.includes("ejemplo") && lowerPrompt.length < 200) {
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "D")); // Few-shot
+      }
+      if (lowerPrompt.includes("analiz") || lowerPrompt.includes("compar")) {
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "E")); // Break down
+      }
+      if (!lowerPrompt.includes("act") && !lowerPrompt.includes("rol") && !lowerPrompt.includes("eres")) {
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "M")); // Role-playing
+      }
+      if (lowerPrompt.length > 300) {
+        sugeridas.push(promptsData.estrategias_prompting.find(e => e.id === "H")); // Skeleton-of-thought
+      }
+
+      // Añadir siempre System Message como base
+      if (!lowerPrompt.includes("eres") && !lowerPrompt.includes("actúa") && !lowerPrompt.includes("role")) {
+        sugeridas.unshift(promptsData.estrategias_prompting.find(e => e.id === "A"));
+      }
+
+      // Eliminar duplicados y limitar a 3
+      const unicas = [];
+      const ids = new Set();
+      sugeridas.forEach(s => {
+        if (s && !ids.has(s.id)) {
+          unicas.push(s);
+          ids.add(s.id);
+        }
+      });
+
+      return unicas.slice(0, 3);
+    }
+
+    // Función para generar ejemplo mejorado
+    function generarPromptMejorado(prompt, analisis) {
+      var mejorado = prompt.trim();
+      var elementosFaltantes = [];
+      var ajustesAplicados = [];
+
+      // Análisis de cada componente y aplicación de ajustes
+      if (analisis.rol.faltante) {
+        elementosFaltantes.push("Rol: Define un rol específico para la IA (ej: 'abogado', 'profesor', 'analista')");
+        ajustesAplicados.push("Añadir rol al inicio: 'Actúa como un profesional especializado...' ");
+        // Generar ejemplo con rol
+        mejorado = "Actúa como un [ESPECIALISTA] y " + mejorado.charAt(0).toLowerCase() + mejorado.slice(1);
+      }
+      
+      if (analisis.instruccion.faltante) {
+        elementosFaltantes.push("Instrucción: Añade una acción clara (redacta, analiza, genera)");
+        ajustesAplicados.push("Especificar la acción: comenzar con verbos como 'Redacta', 'Analiza', 'Genera'");
+        if (!analisis.rol.faltante) {
+          // Si ya tiene rol pero falta instrucción, asegurar que tenga verbo
+          if (!/^(redacta|analiza|genera|crea|escribe|explica|describe|elabora)/i.test(mejorado)) {
+           mejorado = "Redacta: " + mejorado;
+          }
+        }
+      }
+      
+      if (analisis.contexto.faltante) {
+        elementosFaltantes.push("Contexto: Añade lugar, tiempo y situación");
+        ajustesAplicados.push("Incluir contexto: especificar lugar (ciudad, barrio), tiempo (fecha, hora), situación");
+        mejorado += " [EN LUGAR ESPECÍFICO] [DURANTE FECHA/HORA]";
+      }
+      
+      if (analisis.formato.faltante) {
+        elementosFaltantes.push("Formato: Especifica cómo quieres la respuesta (tabla, lista, párrafo)");
+        ajustesAplicados.push("Definir formato: indicar estructura (tabla, lista, JSON, ensayo)");
+        mejorado += ". Formato: [TABLA/LISTA/PÁRRAFO]";
+      }
+      
+      if (analisis.tono.faltante) {
+        elementosFaltantes.push("Tono: Define el estilo (formal, técnico, académico)");
+        ajustesAplicados.push("Establecer tono: formal, informal, técnico, académico, etc.");
+        mejorado += ". Tono: [FORMAL/TÉCNICO]";
+      }
+      
+      if (analisis.audiencia.faltante) {
+        elementosFaltantes.push("Audiencia: Para quién es la respuesta");
+        ajustesAplicados.push("Indicar destinatario: especificar para quién es (estudiantes, profesionales)");
+        mejorado += ". Dirigido a [AUDIENCIA]";
+      }
+
+      // Crear el ejemplo final estructurado
+      var ejemploFinal = "";
+      
+      if (elementosFaltantes.length === 0) {
+        return "✅ ¡Tu prompt ya tiene todos los componentes esenciales!\n\n" +
+               "📝 **Tu prompt actual:**\n" +prompt + "\n\n" +
+               "💡 **Para mejorarlo aún más:**\n" +
+               "• Añade ejemplos concretos\n" +
+               "• Incluye restricciones específicas (extensión, estilo)\n" +
+               "• Añade elementos de contexto adicionales";
+      }
+
+      var listaFaltantes = elementosFaltantes.map(function(e) { return "• " + e; }).join("\n");
+      var listaAjustes = ajustesAplicados.map(function(e) { return "• " + e; }).join("\n");
+      
+      return "📋 **ANÁLISIS:**\n" + listaFaltantes + "\n\n" +
+             "✅ **CORRECCIONES APLICADAS:**\n" + listaAjustes + "\n\n" +
+             "📝 **Tu prompt CORREGIDO:**\n\n" +
+             '"' + mejorado + '"';
+    }
+
+    // ==========================================
+    // BASE DE DATOS DE DELITOS (desde delitos_info.json)
+    // ==========================================
+    const delitosDB = {
+      "violencia intrafamiliar": {
+        definicion: "Agresiones físicas, psicológicas o económicas dentro del núcleo familiar.",
+        estructura_informe: ["Fecha y hora del incidente", "Lugar del hecho", "Descripción de las personas involucradas", "Tipo de agresión", "Medidas tomadas"],
+        keywords: ["agresión", "agredió", "violencia", "familiar", "pareja", "cónyuge", "hogar", "domicilio", "intrafamiliar", "maltrato", "golpe", "lesion"],
+        leyes: ["Ley 1257 de 2008", "artículo 229 del Código Penal", "Ley 599 de 2000", "Ley 1801 de 2016"],
+        ejemplo: "El 10 de febrero de 2026, en Bogotá, se reportó un caso de violencia intrafamiliar donde un ciudadano agredió físicamente a su pareja. Se procedió a trasladar a la víctima a un centro médico y se inició el proceso legal correspondiente."
+      },
+      "hurto": {
+        definicion: "Delito contra la propiedad que consiste en tomar bienes ajenos sin consentimiento.",
+        estructura_informe: ["Objeto hurtado", "Valor estimado", "Circunstancias del hurto", "Testigos", "Acciones policiales"],
+        keywords: ["hurto", "robo", "hurtó", "robó", "sustraj", "apoderamiento", "bien ajeno", "motocicleta", "celular", "vehículo", "pertenencias"],
+        leyes: ["artículo 239 del Código Penal", "artículo 240 del Código Penal", "Ley 599 de 2000", "Ley 906 de 2004"],
+        ejemplo: "El 11 de febrero de 2026, en el barrio Chapinero, un ciudadano denunció el hurto de su motocicleta. Se inició la búsqueda y se levantó el reporte oficial."
+      },
+      "riñas": {
+        definicion: "Conflictos físicos entre dos o más personas en espacios públicos o privados.",
+        estructura_informe: ["Número de personas involucradas", "Motivo de la riña", "Lugar", "Consecuencias", "Intervención policial"],
+        keywords: ["riña", "pelea", "discusión", "altercado", "agresión", "lesiones personales", "herida", "golpe", "botella", "arma blanca", "conflicto"],
+        leyes: ["artículo 111 del Código Penal", "Ley 599 de 2000", "artículo 301 de la Ley 906 de 2004", "artículo 159 de la Ley 1801 de 2016", "artículo 303 de la Ley 906 de 2004"],
+        ejemplo: "El 9 de febrero de 2026, en la Plaza de Bolívar, se registró una riña entre dos grupos de jóvenes. La policía intervino y se logró dispersar a los participantes."
+      },
+      "homicidio": {
+        definicion: "Privación de la vida de una persona de manera intencional o culposa.",
+        estructura_informe: ["Víctima identificada", "Circunstancias del hecho", "Posibles sospechosos", "Evidencias recolectadas", "Acciones judiciales"],
+        keywords: ["homicidio", "muerte", "fallecimiento", "occiso", "cadáver", "sin vida", "asesinato", "privación de la vida"],
+        leyes: ["artículo 103 del Código Penal", "Ley 599 de 2000", "Ley 906 de 2004"],
+        ejemplo: "El 8 de febrero de 2026, en Suba, se reportó el homicidio de un ciudadano. La policía acordonó el área y se inició la investigación."
+      },
+      "delitos electorales": {
+        definicion: "Acciones ilícitas que afectan la transparencia y legalidad de procesos electorales.",
+        estructura_informe: ["Tipo de irregularidad", "Lugar del hecho", "Personas involucradas", "Impacto en el proceso", "Medidas adoptadas"],
+        keywords: ["electoral", "votación", "voto", "elecciones", "compra de votos", "fraude", "mesa de votación", "candidato", "sufragio"],
+        leyes: ["artículo 386 del Código Penal", "Ley 599 de 2000", "Código Electoral"],
+        ejemplo: "El 7 de febrero de 2026, en un puesto de votación en Kennedy, se reportó compra de votos. Se procedió a detener a los responsables y se notificó a la autoridad electoral."
+      }
+    };
+
+    // ==========================================
+    // FUNCIÓN PRINCIPAL: ANALIZAR INFORME
+    // ==========================================
+    function analizarInforme() {
+      const informe = document.getElementById("userInforme").value;
+      const tipoSeleccionado = document.getElementById("tipoDelito").value;
+      const outputEl = document.getElementById("outputInforme");
+
+      if (informe.trim() === "") {
+        outputEl.innerText = "⚠️ Por favor escribe un informe para analizar.";
+        return;
+      }
+
+      const informeLower = informe.toLowerCase();
+      let resultado = "";
+      let puntaje = 0;
+      let maxPuntaje = 0;
+      let advertencias = [];
+      let aciertos = [];
+      let sugerencias = [];
+
+      // ── 1. DETECCIÓN DEL TIPO DE DELITO ──
+      let tipoDetectado = tipoSeleccionado !== "auto" ? tipoSeleccionado : null;
+      let confianzaDeteccion = {};
+
+      if (!tipoDetectado) {
+        for (const [tipo, data] of Object.entries(delitosDB)) {
+          let coincidencias = 0;
+          data.keywords.forEach(kw => {
+            if (informeLower.includes(kw.toLowerCase())) coincidencias++;
+          });
+          confianzaDeteccion[tipo] = coincidencias;
+        }
+        const mejor = Object.entries(confianzaDeteccion).sort((a, b) => b[1] - a[1])[0];
+        if (mejor && mejor[1] > 0) {
+          tipoDetectado = mejor[0];
+        }
+      }
+
+      resultado += "═══════════════════════════════════════\n";
+      resultado += "   📋 ANÁLISIS INTEGRAL DEL INFORME POLICIAL\n";
+      resultado += "═══════════════════════════════════════\n\n";
+
+      // ── TIPO DE DELITO ──
+      resultado += "📌 TIPO DE DELITO IDENTIFICADO\n";
+      resultado += "───────────────────────────────\n";
+      if (tipoDetectado) {
+        const delitoInfo = delitosDB[tipoDetectado];
+        resultado += "✅ " + tipoDetectado.toUpperCase() + "\n";
+        resultado += "   Definición: " + delitoInfo.definicion + "\n\n";
+      } else {
+        resultado += "⚠️ No se pudo identificar el tipo de delito.\n";
+        resultado += "   Sugerencia: Especifica claramente el tipo de delito en el informe.\n\n";
+        advertencias.push("No se identifica el tipo de delito");
+      }
+
+      // ── 2. ANÁLISIS DE ESTRUCTURA (Las 6 W) ──
+      resultado += "📊 ANÁLISIS DE ESTRUCTURA (Las 6 preguntas clave)\n";
+      resultado += "───────────────────────────────\n";
+      maxPuntaje += 6;
+
+      // ¿Cuándo? - Fecha
+      const tieneFecha = informe.match(/\d{1,2} de \w+ de \d{4}/) || informe.match(/\d{1,2}\/\d{1,2}\/\d{2,4}/) || informe.match(/\d{4}-\d{2}-\d{2}/);
+      if (tieneFecha) {
+        aciertos.push("Fecha del incidente");
+        resultado += "✅ ¿Cuándo? (Fecha): Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Falta la fecha del incidente");
+        resultado += "❌ ¿Cuándo? (Fecha): FALTA - Incluye la fecha completa (ej: '10 de febrero de 2026')\n";
+      }
+
+      // ¿Cuándo? - Hora
+      const tieneHora = informe.match(/\d{1,2}:\d{2}/) || informeLower.match(/siendo (aproximadamente )?las \d/);
+      if (tieneHora) {
+        aciertos.push("Hora del incidente");
+        resultado += "✅ ¿Cuándo? (Hora): Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Falta la hora del incidente");
+        resultado += "❌ ¿Cuándo? (Hora): FALTA - Incluye la hora exacta (ej: '16:20 horas')\n";
+      }
+
+      // ¿Dónde?
+      const tieneLugar = informeLower.match(/(barrio|sector|municipio|localidad|calle|carrera|avenida|plaza|bogotá|medellín|cali|ciénaga|dirección|lugar|ubicación)/);
+      if (tieneLugar) {
+        aciertos.push("Lugar del hecho");
+        resultado += "✅ ¿Dónde?: Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Falta el lugar del hecho");
+        resultado += "❌ ¿Dónde?: FALTA - Especifica barrio, dirección o sector\n";
+      }
+
+      // ¿Quién?
+      const tienePersonas = informe.match(/[A-ZÁÉÍÓÚÑ]{2,}\s+[A-ZÁÉÍÓÚÑ]{2,}/) || informeLower.match(/(ciudadano|víctima|agresor|sospechoso|denunciante|patrullero|oficial|capturado|lesionado)/);
+      if (tienePersonas) {
+        aciertos.push("Personas involucradas");
+        resultado += "✅ ¿Quién?: Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Faltan las personas involucradas");
+        resultado += "❌ ¿Quién?: FALTA - Identifica a las personas involucradas con nombres completos\n";
+      }
+
+      // ¿Qué pasó?
+      const tieneHechos = informe.length > 100 && (informeLower.match(/(observamos|se reportó|se registró|se presentó|ocurrió|procedió|se evidenció|denunció|agredió|hurtó)/) || true);
+      if (informe.length > 80) {
+        aciertos.push("Descripción de hechos");
+        resultado += "✅ ¿Qué pasó?: Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Descripción de hechos insuficiente");
+        resultado += "❌ ¿Qué pasó?: INSUFICIENTE - Describe los hechos con mayor detalle\n";
+      }
+
+      // ¿Cómo? / Medidas
+      const tieneMedidas = informeLower.match(/(se procedió|se trasladó|se inició|se capturó|se acordonó|se levantó|se notificó|disposición|fiscalía|judicialización|embalado|rotulado|registro a persona)/);
+      if (tieneMedidas) {
+        aciertos.push("Medidas/acciones tomadas");
+        resultado += "✅ ¿Cómo se actuó?: Presente\n";
+        puntaje++;
+      } else {
+        advertencias.push("Faltan las medidas o acciones tomadas");
+        resultado += "❌ ¿Cómo se actuó?: FALTA - Describe las acciones policiales realizadas\n";
+      }
+
+      resultado += "\n";
+
+      // ── 3. ANÁLISIS DE NORMATIVIDAD ──
+      resultado += "⚖️ ANÁLISIS DE NORMATIVIDAD\n";
+      resultado += "───────────────────────────────\n";
+      maxPuntaje += 3;
+
+      const mencionaLey = informe.match(/Ley\s+\d+/gi);
+      const mencionaArticulo = informe.match(/artículo\s+\d+/gi);
+      const mencionaCodigo = informeLower.match(/(código penal|código de procedimiento|código nacional de seguridad|código electoral)/);
+
+      if (mencionaLey) {
+        const leyes = [...new Set(mencionaLey)];
+        resultado += "✅ Leyes mencionadas: " + leyes.join(", ") + "\n";
+        puntaje++;
+        aciertos.push("Referencias a leyes");
+      } else {
+        resultado += "❌ No se mencionan leyes aplicables.\n";
+        advertencias.push("No se citan leyes");
+      }
+
+      if (mencionaArticulo) {
+        const articulos = [...new Set(mencionaArticulo)];
+        resultado += "✅ Artículos citados: " + articulos.join(", ") + "\n";
+        puntaje++;
+        aciertos.push("Referencias a artículos");
+      } else {
+        resultado += "❌ No se citan artículos específicos.\n";
+        advertencias.push("No se citan artículos específicos");
+      }
+
+      if (mencionaCodigo) {
+        resultado += "✅ Se hace referencia a códigos normativos.\n";
+        puntaje++;
+        aciertos.push("Referencias a códigos");
+      } else {
+        resultado += "❌ No se mencionan códigos normativos (Código Penal, Código de Procedimiento Penal, etc.).\n";
+        advertencias.push("No se mencionan códigos normativos");
+      }
+
+      // Sugerir leyes según tipo de delito
+      if (tipoDetectado) {
+        const leyesSugeridas = delitosDB[tipoDetectado].leyes;
+        const leyesFaltantes = leyesSugeridas.filter(ley => !informe.includes(ley.replace(/artículo /i, "artículo ")));
+        if (leyesFaltantes.length > 0) {
+          resultado += "\n💡 Normatividad sugerida para " + tipoDetectado.toUpperCase() + ":\n";
+          leyesFaltantes.forEach(ley => {
+            resultado += "   → " + ley + "\n";
+          });
+        }
+      }
+
+      resultado += "\n";
+
+      // ── 4. ANÁLISIS DE ESTRUCTURA ESPECÍFICA DEL DELITO ──
+      if (tipoDetectado) {
+        const delitoInfo = delitosDB[tipoDetectado];
+        resultado += "📝 ELEMENTOS REQUERIDOS PARA: " + tipoDetectado.toUpperCase() + "\n";
+        resultado += "───────────────────────────────\n";
+        maxPuntaje += delitoInfo.estructura_informe.length;
+
+        delitoInfo.estructura_informe.forEach(elemento => {
+          const elementoLower = elemento.toLowerCase();
+          let encontrado = false;
+
+          // Heuristic checks for each element
+          if (elementoLower.includes("fecha") && tieneFecha) encontrado = true;
+          if (elementoLower.includes("hora") && tieneHora) encontrado = true;
+          if (elementoLower.includes("lugar") && tieneLugar) encontrado = true;
+          if (elementoLower.includes("personas") && tienePersonas) encontrado = true;
+          if (elementoLower.includes("víctima") && informeLower.match(/(víctima|lesionado|occiso|denunciante)/)) encontrado = true;
+          if (elementoLower.includes("sospechoso") && informeLower.match(/(sospechoso|capturado|agresor|indiciado)/)) encontrado = true;
+          if (elementoLower.includes("agresión") && informeLower.match(/(agresión|agredió|golpe|herida|lesion)/)) encontrado = true;
+          if (elementoLower.includes("medidas") && tieneMedidas) encontrado = true;
+          if (elementoLower.includes("acciones") && tieneMedidas) encontrado = true;
+          if (elementoLower.includes("testigo") && informeLower.match(/(testigo|presencia|observ)/)) encontrado = true;
+          if (elementoLower.includes("objeto") && informeLower.match(/(motocicleta|celular|vehículo|bien|objeto|pertenencia)/)) encontrado = true;
+          if (elementoLower.includes("valor") && informeLower.match(/(valor|estimado|\$|pesos|avalúo)/)) encontrado = true;
+          if (elementoLower.includes("circunstancia") && informe.length > 150) encontrado = true;
+          if (elementoLower.includes("evidencia") && informeLower.match(/(evidencia|elemento material|probatorio|embalado|rotulado)/)) encontrado = true;
+          if (elementoLower.includes("motivo") && informeLower.match(/(motivo|causa|razón|discusión|altercado)/)) encontrado = true;
+          if (elementoLower.includes("consecuencia") && informeLower.match(/(herida|lesión|daño|hospital|médic)/)) encontrado = true;
+          if (elementoLower.includes("intervención") && informeLower.match(/(intervención|interven|policía|patrulla|procedimos)/)) encontrado = true;
+          if (elementoLower.includes("irregularidad") && informeLower.match(/(irregularidad|fraude|compra de votos|anomalía)/)) encontrado = true;
+          if (elementoLower.includes("impacto") && informeLower.match(/(impacto|afectación|consecuencia|resultado)/)) encontrado = true;
+          if (elementoLower.includes("número") && informeLower.match(/(dos|tres|cuatro|varios|grupo|\d+ (ciudadanos|personas|individuos))/)) encontrado = true;
+          if (elementoLower.includes("descripción") && tienePersonas) encontrado = true;
+          if (elementoLower.includes("judicial") && informeLower.match(/(fiscalía|judicialización|judicial|uri|juzgado)/)) encontrado = true;
+
+          if (encontrado) {
+            resultado += "✅ " + elemento + "\n";
+            puntaje++;
+          } else {
+            resultado += "❌ " + elemento + " - FALTA o no se detectó\n";
+            sugerencias.push("Incluir: " + elemento);
+          }
+        });
+        resultado += "\n";
+      }
+
+      // ── 5. ANÁLISIS DE PROTOCOLO POLICIAL ──
+      resultado += "🛡️ PROTOCOLO POLICIAL\n";
+      resultado += "───────────────────────────────\n";
+      maxPuntaje += 5;
+
+      const protocolos = [
+        { nombre: "Identificación del funcionario", regex: /(patrullero|intendente|subintendente|oficial|agente|compañero de servicio|patrulla.*número)/ },
+        { nombre: "Lectura de derechos", regex: /(derechos|derecho a guardar silencio|defensor|abogado|artículo 303)/ },
+        { nombre: "Uso proporcional de la fuerza", regex: /(proporcional|racional|legítimo.*fuerza|manual de intervención)/ },
+        { nombre: "Cadena de custodia / Evidencias", regex: /(embalado|rotulado|elemento material probatorio|cadena de custodia|evidencia)/ },
+        { nombre: "Notificación a autoridades", regex: /(fiscal|fiscalía|uri|defensor público|personería|autoridad competente)/ }
+      ];
+
+      protocolos.forEach(p => {
+        if (informeLower.match(p.regex)) {
+          resultado += "✅ " + p.nombre + "\n";
+          puntaje++;
+          aciertos.push(p.nombre);
+        } else {
+          resultado += "❌ " + p.nombre + " - No detectado\n";
+          sugerencias.push("Agregar: " + p.nombre);
+        }
+      });
+
+      resultado += "\n";
+
+      // ── 6. ANÁLISIS DE REDACCIÓN ──
+      resultado += "✍️ ANÁLISIS DE REDACCIÓN\n";
+      resultado += "───────────────────────────────\n";
+      maxPuntaje += 3;
+
+      // Longitud
+      if (informe.length >= 500) {
+        resultado += "✅ Extensión adecuada (" + informe.length + " caracteres)\n";
+        puntaje++;
+      } else if (informe.length >= 200) {
+        resultado += "⚠️ Extensión aceptable pero mejorable (" + informe.length + " caracteres). Un informe completo suele tener 500+ caracteres.\n";
+        puntaje += 0.5;
+      } else {
+        resultado += "❌ Informe muy corto (" + informe.length + " caracteres). Amplía la descripción de los hechos.\n";
+      }
+
+      // Lenguaje formal
+      const lenguajeFormal = informeLower.match(/(se procedió|se deja constancia|en cumplimiento|conforme a|de acuerdo con|en virtud de|se hace constar)/);
+      if (lenguajeFormal) {
+        resultado += "✅ Uso de lenguaje formal y técnico\n";
+        puntaje++;
+      } else {
+        resultado += "⚠️ Se recomienda usar lenguaje más formal y técnico policial\n";
+        sugerencias.push("Usar expresiones formales como 'se procedió a', 'se deja constancia', 'conforme a'");
+      }
+
+      // Estructura narrativa
+      const tieneEstructura = informeLower.match(/(siendo|cuando|posteriormente|acto seguido|finalmente|en ese mismo instante|igualmente)/);
+      if (tieneEstructura) {
+        resultado += "✅ Buena estructura narrativa cronológica\n";
+        puntaje++;
+      } else {
+        resultado += "⚠️ Se recomienda estructurar el informe cronológicamente con conectores (siendo, posteriormente, finalmente)\n";
+        sugerencias.push("Estructurar cronológicamente con conectores temporales");
+      }
+
+      resultado += "\n";
+
+      // ── 7. PUNTUACIÓN FINAL ──
+      const porcentaje = Math.round((puntaje / maxPuntaje) * 100);
+      let calificacion = "";
+      let emoji = "";
+      if (porcentaje >= 90) { calificacion = "EXCELENTE"; emoji = "🏆"; }
+      else if (porcentaje >= 75) { calificacion = "BUENO"; emoji = "👍"; }
+      else if (porcentaje >= 50) { calificacion = "REGULAR"; emoji = "⚠️"; }
+      else if (porcentaje >= 25) { calificacion = "DEFICIENTE"; emoji = "❌"; }
+      else { calificacion = "MUY DEFICIENTE"; emoji = "🚫"; }
+
+      resultado += "═══════════════════════════════════════\n";
+      resultado += emoji + " CALIFICACIÓN: " + porcentaje + "% - " + calificacion + "\n";
+      resultado += "   (" + puntaje + "/" + maxPuntaje + " criterios cumplidos)\n";
+      resultado += "═══════════════════════════════════════\n\n";
+
+      // ── 8. RESUMEN DE SUGERENCIAS ──
+      if (sugerencias.length > 0) {
+        resultado += "💡 SUGERENCIAS DE MEJORA:\n";
+        resultado += "───────────────────────────────\n";
+        sugerencias.forEach((s, i) => {
+          resultado += (i + 1) + ". " + s + "\n";
+        });
+        resultado += "\n";
+      }
+
+      // ── 9. INFORME CORREGIDO / MEJORADO ──
+      resultado += "═══════════════════════════════════════\n";
+      resultado += "✨ INFORME CORREGIDO Y MEJORADO\n";
+      resultado += "═══════════════════════════════════════\n\n";
+
+      let corregido = "INFORME POLICIAL";
+      if (tipoDetectado) {
+        corregido += " - " + tipoDetectado.toUpperCase();
+      }
+      corregido += "\n\n";
+
+      // Add date/time if missing
+      if (!tieneFecha) {
+        corregido += "El día [FECHA COMPLETA], ";
+      }
+      if (!tieneHora && tieneFecha) {
+        corregido += "siendo aproximadamente las [HORA] horas, ";
+      }
+
+      // Add officer identification if missing
+      if (!informeLower.match(/(patrullero|intendente|oficial|agente)/)) {
+        corregido += "cuando nos encontrábamos realizando actividades de [TIPO DE SERVICIO] como integrantes de la patrulla de vigilancia número [NÚMERO], en compañía de [COMPAÑERO DE SERVICIO], ";
+      }
+
+      // Add location if missing
+      if (!tieneLugar) {
+        corregido += "por el sector de [BARRIO/SECTOR] del municipio de [MUNICIPIO] – [DEPARTAMENTO], ";
+      }
+
+      corregido += "\n\n";
+      corregido += informe;
+      corregido += "\n\n";
+
+      // Add legal framework if missing
+      if (!mencionaLey && tipoDetectado) {
+        corregido += "FUNDAMENTO NORMATIVO:\n";
+        delitosDB[tipoDetectado].leyes.forEach(ley => {
+          corregido += "• " + ley + "\n";
+        });
+        corregido += "\n";
+      }
+
+      // Add rights reading if missing
+      if (!informeLower.match(/(derechos|derecho a guardar silencio)/)) {
+        corregido += "Se le leyeron y garantizaron sus derechos como persona capturada, conforme al artículo 303 de la Ley 906 de 2004, entre ellos el derecho a guardar silencio, a designar un abogado o a solicitar defensor público, a informar a un familiar sobre su situación y a ser puesto a disposición de la autoridad judicial competente en los términos de ley.\n\n";
+      }
+
+      // Add closing
+      if (!informeLower.match(/(trato digno|derechos humanos|debido proceso)/)) {
+        corregido += "Se deja constancia que durante la actuación policial se garantizó en todo momento un trato digno, sin maltrato físico, verbal o psicológico, cumpliéndose lo establecido en la Constitución, la Ley y los manuales de atención al ciudadano de la Policía Nacional.\n\n";
+      }
+
+      corregido += "Nuestra actuación se desarrolló bajo los principios de legalidad, necesidad, proporcionalidad y racionalidad, garantizando los derechos fundamentales de los involucrados.\n\n";
+      corregido += "El presente informe se ajusta a la normatividad vigente y busca garantizar el debido proceso.";
+
+      resultado += corregido;
+
+      // ── 10. EJEMPLO DE REFERENCIA ──
+      if (tipoDetectado) {
+        resultado += "\n\n═══════════════════════════════════════\n";
+        resultado += "📖 EJEMPLO DE REFERENCIA (" + tipoDetectado.toUpperCase() + ")\n";
+        resultado += "═══════════════════════════════════════\n\n";
+        resultado += delitosDB[tipoDetectado].ejemplo;
+      }
+
+      outputEl.innerText = resultado;
+    }
+  </script>
+</body>
+</html>
+
